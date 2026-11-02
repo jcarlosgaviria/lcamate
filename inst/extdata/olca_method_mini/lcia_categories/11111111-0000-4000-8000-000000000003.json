@@ -1,0 +1,26 @@
+{
+ "@type": "ImpactCategory",
+ "@id": "11111111-0000-4000-8000-000000000003",
+ "name": "Test no match (invented)",
+ "refUnit": "kg",
+ "impactFactors": [
+  {
+   "@type": "ImpactFactor",
+   "flow": {
+    "@type": "Flow",
+    "@id": "00000000-0000-0000-0000-000000003039",
+    "name": "Not in the database",
+    "flowType": "ELEMENTARY_FLOW"
+   },
+   "unit": {
+    "@type": "Unit",
+    "name": "kg"
+   },
+   "flowProperty": {
+    "@type": "FlowProperty",
+    "name": "Mass"
+   },
+   "value": 1.0
+  }
+ ]
+}

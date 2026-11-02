@@ -1,0 +1,87 @@
+type,input,output,amount
+biosphere,(2-hydroxy-4-methoxyphenyl)-phenylmethanone | Elementary flows/emission/water/fresh water body | out,53fe40de-ea70-4506-9196-eeed6bfe9a5e,1.0184539640625e-08
+biosphere,(2S)-2-(6-methoxynaphthalen-2-yl)propanoic acid | Elementary flows/emission/water/fresh water body | out,53fe40de-ea70-4506-9196-eeed6bfe9a5e,8.457413916015634e-08
+biosphere,"(3R,5R)-7-[2-(4-fluorophenyl)-3-phenyl-4-(phenylcarbamoyl)-5-propan-2-ylpyrrol-1-yl]-3,5-dihydroxyheptanoic acid | Elementary flows/emission/water/fresh water body | out",53fe40de-ea70-4506-9196-eeed6bfe9a5e,2.3545788750000103e-09
+biosphere,"(3R,5R)-7-[2-(4-fluorophenyl)-4-[(2-hydroxyphenyl)carbamoyl]-3-phenyl-5-propan-2-ylpyrrol-1-yl]-3,5-dihydroxyheptanoic acid | Elementary flows/emission/water/fresh water body | out",53fe40de-ea70-4506-9196-eeed6bfe9a5e,6.421578750000001e-09
+biosphere,"(3R,5R)-7-[2-(4-fluorophenyl)-4-[(4-hydroxyphenyl)carbamoyl]-3-phenyl-5-propan-2-ylpyrrol-1-yl]-3,5-dihydroxyheptanoic acid | Elementary flows/emission/water/fresh water body | out",53fe40de-ea70-4506-9196-eeed6bfe9a5e,6.421578750000001e-09
+biosphere,"(4R,4aR,7aR,12bS)-9-methoxy-3-methyl-1,2,4,4a,5,6,7a,13-octahydro-4,12-methanobenzofuro[3,2-e]isoquinolin-7-one | Elementary flows/emission/water/fresh water body | out",53fe40de-ea70-4506-9196-eeed6bfe9a5e,5.91219444444444e-09
+biosphere,"(8S,9S,10R,13S,14S,17S)-17-acetyl-10,13-dimethyl-1,2,6,7,8,9,11,12,14,15,16,17-dodecahydrocyclopenta[a]phenanthren-3-one | Elementary flows/emission/water/fresh water body | out",53fe40de-ea70-4506-9196-eeed6bfe9a5e,1.5412499999999902e-10
+biosphere,"1,1,2-Trichloroethane | Elementary flows/emission/air | out",0aaf1e13-5d80-37f9-b7bb-81a6b8965c71,3.6457983651809104e-08
+biosphere,"1,2,3,4,7,8-Hexachlorodibenzofuran | Elementary flows/emission/air | out",0aaf1e13-5d80-37f9-b7bb-81a6b8965c71,7.529366188960576e-12
+biosphere,"1-(1,1,2,3,3,6-hexamethyl-2H-inden-5-yl)ethanone | Elementary flows/emission/water/fresh water body | out",53fe40de-ea70-4506-9196-eeed6bfe9a5e,6.5984600295e-09
+biosphere,"1-(3,5,5,6,8,8-hexamethyl-6,7-dihydronaphthalen-2-yl)ethanone | Elementary flows/emission/water/fresh water body | out",53fe40de-ea70-4506-9196-eeed6bfe9a5e,1.171949931675e-08
+biosphere,"1-(4-tert-butyl-2,6-dimethyl-3,5-dinitrophenyl)ethanone | Elementary flows/emission/water/fresh water body | out",53fe40de-ea70-4506-9196-eeed6bfe9a5e,1.7372289375000002e-08
+biosphere,"1-(6-tert-butyl-1,1-dimethyl-2,3-dihydroinden-4-yl)ethanone | Elementary flows/emission/water/fresh water body | out",53fe40de-ea70-4506-9196-eeed6bfe9a5e,2.05293997546875e-09
+biosphere,"2,2-dichloroacetaldehyde | Elementary flows/emission/water/fresh water body | out",53fe40de-ea70-4506-9196-eeed6bfe9a5e,1e-08
+biosphere,"2,6-Di-tert-butyl-p-cresol | Elementary flows/emission/water/fresh water body | out",53fe40de-ea70-4506-9196-eeed6bfe9a5e,2.09316403125e-08
+biosphere,2-(4-chlorophenoxy)-2-methylpropanoic acid | Elementary flows/emission/water/fresh water body | out,53fe40de-ea70-4506-9196-eeed6bfe9a5e,1.52294161635e-08
+biosphere,2-[4-[2-hydroxy-3-(propan-2-ylamino)propoxy]phenyl]acetamide | Elementary flows/emission/water/fresh water body | out,53fe40de-ea70-4506-9196-eeed6bfe9a5e,3.56874625828125e-08
+biosphere,3-[bis(2-carboxyethyl)phosphanyl]propanoic acid | Elementary flows/emission/water/fresh water body | out,53fe40de-ea70-4506-9196-eeed6bfe9a5e,1.4619412500000001e-08
+biosphere,"4,4'-Isopropylidenediphenol | Elementary flows/emission/water/fresh water body | out",53fe40de-ea70-4506-9196-eeed6bfe9a5e,1.21147106876817e-08
+biosphere,"4,6,6,7,8,8-hexamethyl-1,3,4,7-tetrahydrocyclopenta[g]isochromene | Elementary flows/emission/water/fresh water body | out",53fe40de-ea70-4506-9196-eeed6bfe9a5e,6.03879424143415e-08
+biosphere,4-Androstenedione | Elementary flows/emission/water/fresh water body | out,53fe40de-ea70-4506-9196-eeed6bfe9a5e,6.866608391608461e-10
+biosphere,Acetamide | Elementary flows/emission/water/fresh water body | out,53fe40de-ea70-4506-9196-eeed6bfe9a5e,1.25661953906252e-08
+biosphere,Ammonia | Elementary flows/emission/water | out,53fe40de-ea70-4506-9196-eeed6bfe9a5e,7.87e-05
+biosphere,Atrazine | Elementary flows/emission/water/fresh water body | out,53fe40de-ea70-4506-9196-eeed6bfe9a5e,1.622278125e-09
+biosphere,"Benzeneacetic acid, .alpha.-methyl-4-(2-methylpropyl)- | Elementary flows/emission/water/fresh water body | out",53fe40de-ea70-4506-9196-eeed6bfe9a5e,9.49033990384606e-09
+biosphere,Benzophenone | Elementary flows/emission/water/fresh water body | out,53fe40de-ea70-4506-9196-eeed6bfe9a5e,1.3977023625e-08
+biosphere,Biological Oxygen Demand | Elementary flows/emission/water | out,53fe40de-ea70-4506-9196-eeed6bfe9a5e,0.000623
+biosphere,Butyl benzyl phthalate | Elementary flows/emission/water/fresh water body | out,53fe40de-ea70-4506-9196-eeed6bfe9a5e,2.0433414375000004e-09
+biosphere,Butylated hydroxyanisole | Elementary flows/emission/water/fresh water body | out,53fe40de-ea70-4506-9196-eeed6bfe9a5e,8.16844499999998e-09
+biosphere,Cadmium(II) | Elementary flows/emission/water/fresh water body | out,53fe40de-ea70-4506-9196-eeed6bfe9a5e,1.7969306972881e-08
+biosphere,Carbamazepine | Elementary flows/emission/water/fresh water body | out,53fe40de-ea70-4506-9196-eeed6bfe9a5e,6.765808703392651e-08
+biosphere,Carbon dioxide | Elementary flows/emission/air | out,391ccf45-4b61-37e9-a2f2-3e19afc0d4ef,1.2
+biosphere,Carbon dioxide | Elementary flows/emission/air | out,6e19103d-ed39-3b71-8c51-0c65b85002a4,1.4
+biosphere,Chemical Oxygen Demand | Elementary flows/emission/water | out,53fe40de-ea70-4506-9196-eeed6bfe9a5e,0.00222
+biosphere,Chloral hydrate | Elementary flows/emission/water/fresh water body | out,53fe40de-ea70-4506-9196-eeed6bfe9a5e,8.684080531409551e-07
+biosphere,Chloroacetonitrile | Elementary flows/emission/water/fresh water body | out,53fe40de-ea70-4506-9196-eeed6bfe9a5e,6.553702052846672e-08
+biosphere,Chromium(III) | Elementary flows/emission/water/fresh water body | out,53fe40de-ea70-4506-9196-eeed6bfe9a5e,2.8416331266030805e-07
+biosphere,Coal | Elementary flows/resource/ground/subterranean | in,391ccf45-4b61-37e9-a2f2-3e19afc0d4ef,14.0
+biosphere,Copper(II) | Elementary flows/emission/water/fresh water body | out,53fe40de-ea70-4506-9196-eeed6bfe9a5e,4.9607812786856e-07
+biosphere,Cyanamide | Elementary flows/emission/air | out,0aaf1e13-5d80-37f9-b7bb-81a6b8965c71,0.0027739770169854
+biosphere,Di-n-octyl phthalate | Elementary flows/emission/water/fresh water body | out,53fe40de-ea70-4506-9196-eeed6bfe9a5e,3.9566520562500107e-08
+biosphere,Dichloroacetic acid | Elementary flows/emission/water/fresh water body | out,53fe40de-ea70-4506-9196-eeed6bfe9a5e,9.660454915916432e-06
+biosphere,Diclofenac | Elementary flows/emission/water/fresh water body | out,53fe40de-ea70-4506-9196-eeed6bfe9a5e,4.772330696064711e-08
+biosphere,Diuron | Elementary flows/emission/water/fresh water body | out,53fe40de-ea70-4506-9196-eeed6bfe9a5e,7.79065441874999e-09
+biosphere,Estradiol | Elementary flows/emission/water/fresh water body | out,53fe40de-ea70-4506-9196-eeed6bfe9a5e,3.13632000000002e-10
+biosphere,Estrone | Elementary flows/emission/water/fresh water body | out,53fe40de-ea70-4506-9196-eeed6bfe9a5e,1.49993817865385e-09
+biosphere,Ethylene | Elementary flows/emission/air | out,391ccf45-4b61-37e9-a2f2-3e19afc0d4ef,0.0005
+biosphere,Gemfibrozil | Elementary flows/emission/water/fresh water body | out,53fe40de-ea70-4506-9196-eeed6bfe9a5e,4.9222662948063406e-08
+biosphere,HCFC-22 | Elementary flows/emission/air | out,0aaf1e13-5d80-37f9-b7bb-81a6b8965c71,4.359106740977176e-05
+biosphere,Iopromide | Elementary flows/emission/water/fresh water body | out,53fe40de-ea70-4506-9196-eeed6bfe9a5e,5.3550240517241406e-09
+biosphere,Lead(II) | Elementary flows/emission/water/fresh water body | out,53fe40de-ea70-4506-9196-eeed6bfe9a5e,2.352661133360991e-07
+biosphere,Mercury | Elementary flows/emission/air | out,0aaf1e13-5d80-37f9-b7bb-81a6b8965c71,3.130631204883608e-06
+biosphere,Mercury(II) | Elementary flows/emission/water/fresh water body | out,53fe40de-ea70-4506-9196-eeed6bfe9a5e,1.5561181730769e-08
+biosphere,"N,N-Diethyl-m-toluamide | Elementary flows/emission/water/fresh water body | out",53fe40de-ea70-4506-9196-eeed6bfe9a5e,2.4359671875000002e-08
+biosphere,N-Nitrosodimethylamine | Elementary flows/emission/water/fresh water body | out,53fe40de-ea70-4506-9196-eeed6bfe9a5e,5.84378916430986e-08
+biosphere,Nickel(II) | Elementary flows/emission/water/fresh water body | out,53fe40de-ea70-4506-9196-eeed6bfe9a5e,7.34617222044805e-07
+biosphere,Nitrate | Elementary flows/emission/water | out,53fe40de-ea70-4506-9196-eeed6bfe9a5e,0.00178
+biosphere,Nitrogen | Elementary flows/emission/water/fresh water body/river | out,53fe40de-ea70-4506-9196-eeed6bfe9a5e,0.0001253
+biosphere,Nitrous oxide | Elementary flows/emission/air | out,53fe40de-ea70-4506-9196-eeed6bfe9a5e,1.29303759169114e-05
+biosphere,Nonylphenol | Elementary flows/emission/water/fresh water body | out,53fe40de-ea70-4506-9196-eeed6bfe9a5e,5.2550661874877904e-08
+biosphere,Octylphenol | Elementary flows/emission/water/fresh water body | out,53fe40de-ea70-4506-9196-eeed6bfe9a5e,8.4339194625e-09
+biosphere,Orthophosphate | Elementary flows/emission/ground | out,391ccf45-4b61-37e9-a2f2-3e19afc0d4ef,0.0066
+biosphere,"Particulate matter, ≤ 2.5μm | Elementary flows/emission/air | out",0aaf1e13-5d80-37f9-b7bb-81a6b8965c71,0.0871821348195435
+biosphere,Phenytoin | Elementary flows/emission/water/fresh water body | out,53fe40de-ea70-4506-9196-eeed6bfe9a5e,8.16377637656941e-09
+biosphere,Phosphorus | Elementary flows/emission/air | out,0aaf1e13-5d80-37f9-b7bb-81a6b8965c71,4.359106740977176e-06
+biosphere,Phosphorus | Elementary flows/emission/water | out,53fe40de-ea70-4506-9196-eeed6bfe9a5e,1.78e-05
+biosphere,Pyrene | Elementary flows/emission/air | out,0aaf1e13-5d80-37f9-b7bb-81a6b8965c71,3.6061701220811184e-06
+biosphere,Sulfamethoxazole | Elementary flows/emission/water/fresh water body | out,53fe40de-ea70-4506-9196-eeed6bfe9a5e,2.06523729521484e-08
+biosphere,Sulfur dioxide | Elementary flows/emission/air | out,391ccf45-4b61-37e9-a2f2-3e19afc0d4ef,0.0014
+biosphere,Testosterone | Elementary flows/emission/water/fresh water body | out,53fe40de-ea70-4506-9196-eeed6bfe9a5e,5.598669374999991e-10
+biosphere,Toluene | Elementary flows/emission/water | out,0aaf1e13-5d80-37f9-b7bb-81a6b8965c71,9.907060774948129e-06
+biosphere,Total suspended solids | Elementary flows/emission/water | out,53fe40de-ea70-4506-9196-eeed6bfe9a5e,0.00185
+biosphere,"Transformation, from pasture and meadow | Ecosystem Services | in",391ccf45-4b61-37e9-a2f2-3e19afc0d4ef,0.3
+biosphere,"Transformation, to industrial area | Ecosystem Services | in",391ccf45-4b61-37e9-a2f2-3e19afc0d4ef,0.3
+biosphere,Trichloroacetic acid | Elementary flows/emission/water/fresh water body | out,53fe40de-ea70-4506-9196-eeed6bfe9a5e,1.10083246750823e-05
+biosphere,Triclocarban | Elementary flows/emission/water/fresh water body | out,53fe40de-ea70-4506-9196-eeed6bfe9a5e,2.1186904218750003e-08
+biosphere,Triclosan | Elementary flows/emission/water/fresh water body | out,53fe40de-ea70-4506-9196-eeed6bfe9a5e,3.3479309390625e-08
+biosphere,"Trihalomethanes (four), total | Elementary flows/emission/water/fresh water body | out",53fe40de-ea70-4506-9196-eeed6bfe9a5e,3.1763753880799e-05
+biosphere,Trimethoprim | Elementary flows/emission/water/fresh water body | out,53fe40de-ea70-4506-9196-eeed6bfe9a5e,4.01642663397669e-08
+biosphere,Tris(2-chloroethyl) phosphate | Elementary flows/emission/water/fresh water body | out,53fe40de-ea70-4506-9196-eeed6bfe9a5e,6.12633374999999e-08
+biosphere,Water | Elementary flows/resource/water/subterranean | in,391ccf45-4b61-37e9-a2f2-3e19afc0d4ef,12.0
+biosphere,Zinc(II) | Elementary flows/emission/water/fresh water body | out,53fe40de-ea70-4506-9196-eeed6bfe9a5e,5.108107531460081e-06
+biosphere,[2-(carbamoyloxymethyl)-2-methylpentyl] carbamate | Elementary flows/emission/water/fresh water body | out,53fe40de-ea70-4506-9196-eeed6bfe9a5e,3.3406089197064505e-08
+biosphere,o-Xylene | Elementary flows/emission/air | out,0aaf1e13-5d80-37f9-b7bb-81a6b8965c71,2.3776945859875505e-06
+technosphere,ee8077d4-d28c-46c4-9f15-5b22bce6063d,0aaf1e13-5d80-37f9-b7bb-81a6b8965c71,18.704530743102065
+technosphere,ee8077d4-d28c-46c4-9f15-5b22bce6063d,d3db6ab2-33de-453b-ac74-0567ba7fa95b,1.0

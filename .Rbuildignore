@@ -1,0 +1,8 @@
+^\.git$
+^NOTAS_DESARROLLO\.md$
+^README\.md$
+^\.github$
+^\.gitignore$
+^CONTRIBUTING\.md$
+^CODE_OF_CONDUCT\.md$
+^cran-comments\.md$

@@ -1,0 +1,425 @@
+---
+title: "Reproducible matrix LCA with lcamate: a USLCI case study"
+author: "Juan C. Gaviria-Chaverra"
+date: "`r Sys.Date()`"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{Reproducible matrix LCA with lcamate: a USLCI case study}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r setup, include = FALSE}
+knitr::opts_chunk$set(collapse = TRUE, comment = "#>", fig.width = 7, fig.height = 3.8,
+                      dev = "png", dpi = 96)
+library(lcamate)
+ext <- function(...) system.file("extdata", ..., package = "lcamate")
+short <- function(x, n = 48) ifelse(nchar(x) > n, paste0(substr(x, 1, n - 1), "…"), x)
+```
+
+## 1. Aim and scope
+
+`lcamate` computes life cycle assessment (LCA) results with the matrix method of
+ISO 14044 and is designed so that its results can be checked against other
+engines. This vignette follows one open data source, the U.S. Life Cycle
+Inventory Database (USLCI), from the raw openLCA JSON-LD export to validated
+impact scores, and then shows the uncertainty and comparison tools of the
+package.
+
+Two things are kept separate throughout:
+
+* **What is measured here**: numerical agreement with openLCA and Brightway,
+  computed when this vignette is built.
+* **What is assumed**: the interpretation of the database (unit conversion,
+  link rules) and the impact method. Agreement with another engine validates
+  the solver, not the interpretation of the data.
+
+All files used below ship with the package (`inst/extdata`), so every number
+can be reproduced.
+
+## 2. Reading a USLCI export and checking link quality
+
+A JSON-LD export of USLCI is a collection of processes whose technosphere inputs
+point to a default provider. `read_uslci()` reads the folders `processes/` and
+`flows/` and builds a model in *cut-off mode*: inputs without a valid provider
+inside the database are not followed, and each process records how complete its
+linking is. The package includes a miniature export of seven processes
+(one of them reduced in size) that exercises every rule.
+
+```{r mini}
+m_mini <- read_uslci(ext("uslci_mini"))
+m_mini
+str(m_mini$report)
+```
+
+The `report` counts what the reader had to decide:
+
+* `r1_reclassified`: land transformation/occupation inputs typed as products but
+  without any producer (rule R1: treated as resource flows);
+* `r2_refused`: default-provider links that point to a process whose reference
+  flow is *not* the flow being consumed (rule R2: link refused);
+* `skipped_unit` and `skipped_property`: exchanges that could not be converted.
+
+Why R2 matters: in the complete 1.2026-03.0 export we analysed (1,341
+processes), 219 default-provider links pointed to a process producing a
+different flow (for example gasoline consumed, diesel supplied), about 5% of
+the provider links. In the earlier 1.2025-06.0 export (962 processes), keeping
+such links made the technosphere matrix non-productive (spectral radius of the
+consumption matrix 11.3, with negative supplies), and refusing them gave a
+productive system (spectral radius 0.65). These figures come from our analysis
+of the full exports; they are quoted here, not recomputed by the vignette.
+
+The completeness of each process is the share of its technosphere inputs that
+are linked:
+
+```{r completeness}
+info <- m_mini$info
+info$name <- short(info$name, 40)
+info[order(info$completeness), c("name", "n_tech", "n_linked", "completeness")]
+```
+
+A completeness below 1 means that part of the supply chain is cut off, so the
+score of that process is a **lower bound**, not a result to report. In the full
+export, only 27 of 1,341 processes are closed without any external library;
+all 27 are leaf processes without technosphere inputs. Chains such as electric
+trucks depend on the separate *eLCI electricity baseline* library that the JSON-LD
+only references. This is a property of the data distribution, not of the
+package.
+
+## 3. A validated subgraph
+
+To exercise the solver on real chains, the package ships the closure of twelve
+USLCI processes together with the eLCI electricity library: 583 processes,
+restricted to the elementary flows that have a GWP100 factor. These twelve were
+also calculated with the openLCA engine (olca-core 2.6.2) on the full
+databases.
+
+```{r subgraph}
+procs <- read.csv(ext("uslci_subgraph_processes.csv"), stringsAsFactors = FALSE)
+m <- read_lca_csv(ext("uslci_subgraph_exchanges.csv"), ext("uslci_subgraph_cf.csv"),
+                  processes = procs$process)
+m
+labels <- setNames(procs$name, procs$process)
+```
+
+### 3.1 Agreement with openLCA
+
+```{r olca}
+ref <- read.csv(ext("uslci_subgraph_openlca_gwp.csv"), stringsAsFactors = FALSE)
+scores <- lca_scores(m, "GWP100")
+cmp <- data.frame(
+  process = short(ref$name, 55),
+  lcamate = unname(scores[ref$pid]),
+  openLCA = ref$gwp_olca)
+rel <- abs(cmp$lcamate - cmp$openLCA) / abs(cmp$openLCA)
+cmp$rel_diff <- formatC(rel, format = "e", digits = 1)
+knitr::kable(cmp, digits = c(NA, 8, 8, NA), format.args = list(scientific = FALSE),
+             caption = "GWP100 per unit of reference flow (kg CO2-eq, simplified method).")
+```
+
+The largest relative difference is `r format(max(rel), digits = 2)`.
+Reading the result requires three caveats that we state rather than hide:
+
+1. Nine of the twelve processes are electric trucks; the others are two leaf
+   processes (an effluent release and corn decomposition) and one extrusion
+   process. The comparison covers few process types.
+2. The GWP100 used here is a **simplified** method (IPCC AR5 values for 14 gases
+   and CO$_2$ uptake as -1). It is meant to validate the engine, not for
+   reporting. Use a full impact method for real studies.
+3. Both engines read the same data. Agreement shows that the matrix algebra and
+   the inventories coincide, not that the data were interpreted correctly.
+
+### 3.2 Contributions
+
+```{r contrib}
+pid <- ref$pid[grepl("Extrusion", ref$name)][1]
+res <- lca_calc(m, setNames(1, pid), "GWP100")
+res$score
+lca_contrib(res, n = 5, labels = setNames(short(procs$name, 50), procs$process))
+```
+
+```{r contrib-plot}
+plot_contributions(res, n = 6, labels = setNames(short(procs$name, 50), procs$process))
+```
+
+Contributions are exact: they sum to the score. Every bar carries its value and
+share, so the figure can be read without estimating from the axis.
+
+### 3.3 Scores of all processes at once
+
+`lca_scores()` solves one sparse system for the unit score of every process.
+Each score is per unit of the process's own reference flow (MJ, kg, item, ...),
+so scores are only comparable between processes with the same unit. As an
+example, the electricity consumption mixes of the eLCI library (all per MJ):
+
+```{r allscores}
+s <- lca_scores(m, "GWP100")
+mix <- grepl("^Electricity; at grid; consumption mix", labels[names(s)])
+s <- sort(s[mix], decreasing = TRUE)
+head(data.frame(process = unname(short(labels[names(s)], 60)), GWP100_per_MJ = unname(s)), 5)
+```
+
+## 4. Agreement with Brightway on a small database
+
+The USLCI comparison above is with openLCA. For Brightway we use a small
+database (seven processes, three flows) in which the same exchanges were loaded
+in Brightway and in `lcamate`, with deterministic results saved in the package.
+
+```{r brightway}
+ex <- read.csv(ext("toy_exchanges.csv")); cf <- read.csv(ext("toy_cf.csv"))
+mt <- lca_model(ex, cf)
+det <- read.csv(ext("toy_brightway_det.csv"))
+mats <- lca_matrices(mt)
+d <- unique(det$demand)
+rel <- vapply(d, function(x) {
+  r <- lca_calc(mt, setNames(as.numeric(sub("^.*x", "", x)), sub("x[0-9]+$", "", x)), "GWP100", mats)
+  b <- det$value[det$demand == x & det$quantity == "GWP100"]
+  abs(r$score - b) / abs(b)
+}, 0)
+data.frame(n_demands = length(d), max_relative_difference = max(rel))
+```
+
+Differences of this size are consistent with Brightway storing characterization
+factors in single precision; we have not isolated that cause separately here.
+
+## 5. Uncertainty: independent draws, error and number of iterations
+
+`lca_mc()` samples every exchange with a lognormal distribution (`utype == 2`)
+independently, in the same way for all impact methods, and returns the scores.
+`lca_mc_error()` reports the Monte Carlo error of the mean and the number of
+iterations needed for a target relative error.
+
+### 5.1 Uncertainty carried by USLCI itself
+
+`read_uslci()` imports the uncertainty distributions that USLCI exchanges carry
+(lognormal, triangular and uniform) and counts what it found in
+`report$uncertainty`. Distributions that cannot be used (for example a
+triangular distribution whose mode lies outside its range, or a lognormal with
+a non-positive median) are counted as `unsupported` and left fixed. The package
+ships seven processes that contain one case of each kind:
+
+```{r unc-read}
+m_unc <- read_uslci(ext("uslci_unc"))
+str(m_unc$report$uncertainty)
+```
+
+This should be read with caution. In the complete USLCI export of version
+1.2026-03.0 (77,986 exchanges in 5,651 processes) only 492 exchanges carry a
+distribution with an actual spread, and 5,117 of 5,129 lognormal entries have a
+geometric standard deviation of exactly 1, that is, no spread at all. A Monte
+Carlo run on USLCI therefore propagates *the uncertainty that is documented*,
+which is a small part of the total. To make this visible, the package reports a
+coverage indicator and warns when it is low:
+
+```{r unc-cov}
+# The fixture has no climate-relevant flows, so an illustrative method is used:
+# the mass of all elementary flows (every factor equal to 1).
+m_unc$C <- list(emitted_mass = setNames(rep(1, length(m_unc$flows)), m_unc$flows))
+p_corn <- m_unc$processes[m_unc$info$name == "Corn wet milling; operations"]
+p_alum <- m_unc$processes[grepl("^Potassium sulphate", m_unc$info$name)]
+unlist(lca_uncertainty_coverage(m_unc, setNames(1, p_corn), "emitted_mass"))
+unlist(lca_uncertainty_coverage(m_unc, setNames(1, p_alum), "emitted_mass"))
+```
+
+`share_bio_contribution` is the share of the (absolute) direct elementary-flow
+contributions that comes from exchanges with a varying distribution. Narrow
+intervals in a result with low coverage mean *lack of information*, not low
+uncertainty. `lca_mc_summary()`, `lca_compare_summary()` and
+`lca_doe_effects()` repeat this figure and warn below 50%.
+
+```{r unc-mc}
+x_unc <- suppressWarnings(
+  lca_mc(m_unc, setNames(1, p_alum), "emitted_mass", n = 500, seed = 1))
+lca_mc_summary(x_unc)
+```
+
+### 5.2 Independent draws, error and number of iterations on the toy database
+
+The functions work in the same way on any model. We use the small database
+with lognormal uncertainty to illustrate error and sensitivity.
+
+```{r mc}
+x <- lca_mc(mt, c(product = 1), "GWP100", n = 500, seed = 1, keep_draws = TRUE)
+lca_mc_summary(x)
+lca_mc_error(unclass(x)[, 1], target_rel = 0.01)[c("n", "rel_se", "n_needed")]
+```
+
+The vignettes use a few hundred iterations to stay fast; for reported results use the `n_needed` above or more.
+
+```{r mc-plot}
+plot_mc(x)
+```
+
+The summary reports effect sizes and intervals, not p-values. With simulated
+draws, a p-value only reflects the number of iterations: as Heijungs (2020)
+shows, a large number of runs can lead to rejecting hypotheses that should not be rejected. How many runs
+are enough for the *estimate* is a different question, answered by
+`lca_mc_error()`.
+
+`lca_sens()` screens which uncertain exchanges drive the result by Spearman
+rank correlation. It is a screening measure, not a variance decomposition.
+
+```{r sens}
+lca_sens(x, top = 4)
+```
+
+## 6. Comparing two alternatives
+
+`lca_compare()` evaluates both alternatives on the *same* sampled matrices in
+every iteration, so uncertainty in what they share cancels in the difference.
+
+```{r compare}
+paired   <- lca_compare(mt, c(product = 1), c(product = 1.1), "GWP100", n = 500, seed = 1)
+unpaired <- lca_compare(mt, c(product = 1), c(product = 1.1), "GWP100", n = 500, seed = 1,
+                        paired = FALSE)
+rbind(paired = lca_compare_summary(paired), unpaired = lca_compare_summary(unpaired))[
+  , c("mean_diff", "diff_lower", "diff_upper", "prob_a_lower")]
+```
+
+Both estimate the same mean difference (they differ a little because the draws differ), but without pairing the interval is far wider
+and the probability that A is lower falls, although B is by construction 10%
+larger. This is why pairing matters when alternatives share processes.
+
+```{r compare-plot}
+plot_compare(paired)
+```
+
+## 7. Design of experiments on a model
+
+Factors can be physical amounts or scenario choices. `lca_doe_run()` evaluates
+every run with common random numbers, and `lca_doe_effects()` returns effects
+with intervals and the probability that each effect is positive.
+
+```{r doe}
+design <- lca_doe_design(list(steel = c(1, 2), gas = c(1, 3)))
+fun <- function(m, lv) lca_scale(lca_scale(m, "steel", "product", lv$steel),
+                                 "gas", "elec", lv$gas)
+run <- lca_doe_run(mt, design, fun, c(product = 1), "GWP100", n = 300, seed = 1)
+eff <- lca_doe_effects(run)
+eff
+```
+
+```{r doe-plot}
+plot_effects(eff)
+```
+
+In this mode the interval reflects the uncertainty of the inputs, and no
+p-values are given. When the responses are **measured on real replicates**
+(a laboratory or pilot-plant experiment whose inventory feeds the model), use
+the experimental mode, where the effects are fitted by least squares and
+confidence intervals and p-values are meaningful. The following uses synthetic
+responses only to show the interface:
+
+```{r doe-exp}
+d2 <- lca_doe_design(list(A = c(0, 1), B = c(0, 1)), replicates = 3)
+set.seed(7)
+X <- attr(d2, "coded")
+y <- 10 + 2 * X[, "A"] + rnorm(nrow(X), sd = 0.3)   # synthetic, not data
+lca_doe_effects(d2, y)
+```
+
+For fractional designs, `lca_doe_aliases()` shows which effects are confounded.
+
+## 8. Other impact methods
+
+The built-in GWP100 is a convenience. `lca_method_gwp()` adds a GWP100 from the
+IPCC AR5 or AR6 tables by matching flow names; only gases whose values could be
+checked against the report are included, and others can be added with `extra`.
+
+```{r gwp}
+mg <- lca_method_gwp(m_mini, "AR6", ch4 = "fossil")
+mg$method_report[, c("category", "n_flows_matched", "share_flows_matched")]
+```
+
+For complete methods, `read_olca_method()` reads an impact method published in
+openLCA JSON-LD format (for example TRACI or ReCiPe from the U.S. EPA) and
+links its factors to the flows of the model **by identifier**. The package does
+not distribute any method; you download the files and respect their license.
+The package includes a tiny method with *invented* factors, only to show the
+mechanism:
+
+```{r method}
+mm <- read_olca_method(ext("olca_method_mini"), m_mini, method = "method A")
+mm$method_report[, c("category", "n_factors", "n_flows_matched", "skipped_formula",
+                     "skipped_unit", "skipped_property")]
+```
+
+The report says what could not be applied: factors given only as formulas, in
+a unit that is not known, or for a flow property different from the reference
+property of the flow. Read `share_flows_matched` before interpreting a score:
+a method that characterises few of the flows of the model says nothing about
+the rest. These invented factors must not be used for any result.
+
+### TRACI
+
+The U.S. EPA publishes TRACI in two forms. **TRACI 2.1** comes as an openLCA
+JSON-LD export linked by flow identifier and is read with `read_olca_method()`.
+**TRACI 2.2** is a spreadsheet organised by substance (CAS number), and
+`read_traci()` reads it:
+
+```{r traci22, eval = FALSE}
+m <- read_uslci("path/to/uslci")                # keeps the CAS number of each flow
+m <- read_traci("path/to/TRACI_2_2.xlsx", m)    # needs the readxl package
+m$method_report                                 # factors and flows matched per category
+m$traci_report                                  # matches by CAS and by name
+```
+
+In the USLCI export, about a third of the elementary flows used by the processes are
+missing from the flow folder, so they carry no CAS number (this includes "Carbon dioxide"
+emitted to air). `read_traci()` therefore compares flows without a CAS with the TRACI
+substance names (exact, case-insensitive); without this step, the TRACI global warming
+of most processes was far below the built-in GWP100.
+
+Three things to keep in mind. First, the 2.2 workbook has no eutrophication and
+no fossil-fuel depletion (the EPA removed them in 2022). Second, ecotoxicity and
+human-health factors depend on the emission compartment, and mapping the category
+path of each flow to a TRACI compartment is an **assumption** (documented in
+`?read_traci` and overridable). Third, TRACI global warming is based on IPCC AR4,
+so it will differ from `lca_method_gwp()`.
+
+### Checking the input data
+
+`lca_check()` looks for problems that do not stop the calculation but change the
+result silently: repeated rows, elementary flows that no method characterises,
+processes without data, inconsistent uncertainty parameters, flows without a CAS
+number and names that differ by one character. It also asks whether the system can
+be solved at all (self-consumption, unproductive cycles, singular or badly conditioned
+matrices) and, when the exchanges have a `unit` column, whether a flow appears in
+different units. It lists what it did **not** check. The USLCI exchanges carry no
+unit column because `read_uslci()` already converts every amount to the reference
+unit of its unit group.
+
+```{r check, eval = FALSE}
+lca_check(m)
+lca_check(m, demand = c("my process id" = 1), method = "Global warming")
+```
+
+## 9. Limitations
+
+* The impact method in the examples is a simplified GWP100; full methods are
+  read from files you provide (`read_olca_method()`), and the reader has been
+  tested only with invented test factors until real files are validated.
+* USLCI documents very little uncertainty (0.6% of the exchanges of the full
+  export carry a varying distribution); intervals from Monte Carlo on USLCI
+  data are lower bounds of the real uncertainty. Pedigree-derived uncertainty
+  is not applied.
+* The reader does not read the openLCA library format yet; library processes
+  enter through the precomputed subgraph.
+* The validation against openLCA covers twelve processes (nine of them electric
+  trucks), and the validation against Brightway a seven-process database.
+* USLCI describes United States systems.
+* The conclusions about the link rules (R1, R2) come from the analysis of one
+  database version.
+
+## 10. Reproducibility
+
+```{r session}
+sessionInfo()
+```
+
+**Reference.** Heijungs R. (2020). On the number of Monte Carlo runs in
+comparative probabilistic LCA. *International Journal of Life Cycle
+Assessment* 25(2): 394-402. doi:10.1007/s11367-019-01698-4.
+
+**Data.** U.S. Life Cycle Inventory Database (NREL/USLCI, MIT license); see
+`inst/extdata/README_DATA.md`.

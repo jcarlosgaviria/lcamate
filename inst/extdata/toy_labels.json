@@ -1,0 +1,1 @@
+{"processes": ["elec", "gas", "steel", "coal", "diesel", "transport", "product"], "flows": ["CO2", "CH4", "NOx"]}

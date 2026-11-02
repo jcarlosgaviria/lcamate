@@ -1,0 +1,33 @@
+"category","flow","cf"
+"Acidification","Sulfur dioxide | Elementary flows/emission/air/troposphere/urban | out",1.0
+"Acidification","Nitrogen oxides | Elementary flows/emission/air/troposphere/rural | out",0.7
+"Acidification","Sulfur oxides | Elementary flows/emission/air/troposphere/rural | out",1.0
+"Global warming","Carbon dioxide | Elementary flows/emission/air/troposphere/rural | out",1.0
+"Global warming","Methane | Elementary flows/emission/air/troposphere/urban | out",25.0
+"Global warming","Nitrous oxide | Elementary flows/emission/air/troposphere/rural | out",298.0
+"Human health - particulate matter","Sulfur dioxide | Elementary flows/emission/air/troposphere/urban | out",0.0611111111111111
+"Human health - particulate matter","Nitrogen oxides | Elementary flows/emission/air/troposphere/rural | out",0.0072222222222222
+"Human health - particulate matter","Particulate matter, ≤ 2.5μm | Elementary flows/emission/air/troposphere/rural | out",1.0
+"Smog formation","Methane | Elementary flows/emission/air/troposphere/urban | out",0.0143794871794871
+"Smog formation","Nitrogen oxides | Elementary flows/emission/air/troposphere/rural | out",24.793589743589735
+"Smog formation","Formaldehyde | Elementary flows/emission/air/troposphere/urban | out",9.455846153846151
+"Freshwater ecotoxicity","Formaldehyde | Elementary flows/emission/water/fresh water body | out",297.4211231191256
+"Freshwater ecotoxicity","Formaldehyde | Elementary flows/emission/air/troposphere/urban | out",27.62498707813233
+"Freshwater ecotoxicity","Formaldehyde | Elementary flows/emission/ground/human-dominated/agricultural | out",83.96117149423063
+"Freshwater ecotoxicity","Mercury(II) | Elementary flows/emission/water/saline water body/ocean | out",1.7849861310130208e-17
+"Freshwater ecotoxicity","Chloroform | Elementary flows/emission/ground/human-dominated/industrial | out",2.085892060487647
+"Freshwater ecotoxicity","Carbon tetrachloride | Elementary flows/emission/water | out",66.36990322738332
+"Human health - cancer","Formaldehyde | Elementary flows/emission/water/fresh water body | out",1.2408846392567557e-07
+"Human health - cancer","Formaldehyde | Elementary flows/emission/air/troposphere/urban | out",2.542168575439161e-05
+"Human health - cancer","Formaldehyde | Elementary flows/emission/ground/human-dominated/agricultural | out",2.877137230702759e-07
+"Human health - cancer","Mercury(II) | Elementary flows/emission/water/saline water body/ocean | out",9.562717654660305e-05
+"Human health - cancer","Chloroform | Elementary flows/emission/ground/human-dominated/industrial | out",1.4753036323313694e-07
+"Human health - cancer","Carbon tetrachloride | Elementary flows/emission/water | out",4.1625325795455096e-05
+"Human health - non-cancer","Formaldehyde | Elementary flows/emission/water/fresh water body | out",3.235884859811735e-07
+"Human health - non-cancer","Formaldehyde | Elementary flows/emission/air/troposphere/urban | out",2.667275702097868e-07
+"Human health - non-cancer","Formaldehyde | Elementary flows/emission/ground/human-dominated/agricultural | out",1.4784393045317133e-07
+"Human health - non-cancer","Mercury(II) | Elementary flows/emission/water/saline water body/ocean | out",0.0113197698416141
+"Human health - non-cancer","Chloroform | Elementary flows/emission/ground/human-dominated/industrial | out",7.950831920931725e-07
+"Human health - non-cancer","Carbon tetrachloride | Elementary flows/emission/water | out",0.0001416233637047
+"Global warming","Methane | Elementary flows/emission/air | out",25.0
+"Smog formation","Methane | Elementary flows/emission/air | out",0.014379487179487182

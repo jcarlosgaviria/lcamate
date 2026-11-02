@@ -1,0 +1,120 @@
+toy <- function() {
+  ex <- read.csv(system.file("extdata", "toy_exchanges.csv", package = "lcamate"))
+  cf <- read.csv(system.file("extdata", "toy_cf.csv", package = "lcamate"))
+  lca_model(ex, cf)
+}
+
+test_that("full factorial is orthogonal and balanced", {
+  d <- lca_doe_design(list(A = c(1, 2), B = c("x", "y"), C = c(0, 1)))
+  expect_equal(nrow(d), 8)
+  X <- attr(d, "coded")
+  expect_equal(unname(crossprod(X)), diag(8, 3), ignore_attr = TRUE)
+  d3 <- lca_doe_design(list(A = 1:3, B = 1:2))
+  expect_equal(nrow(d3), 6); expect_null(attr(d3, "coded"))
+  r <- lca_doe_design(list(A = 0:1, B = 0:1), replicates = 3, randomize = TRUE, seed = 1)
+  expect_equal(nrow(r), 12); expect_equal(sort(unique(r$replicate)), 1:3)
+})
+
+test_that("fractional factorial: size, orthogonality, aliases, resolution", {
+  d <- lca_doe_design(list(A = 0:1, B = 0:1, C = 0:1, D = 0:1), type = "frac")
+  expect_equal(nrow(d), 8)
+  X <- attr(d, "coded")
+  expect_equal(unname(crossprod(X)), diag(8, 4), ignore_attr = TRUE)
+  expect_equal(unname(X[, "D"]), unname(X[, "A"] * X[, "B"] * X[, "C"]))
+  al <- lca_doe_aliases(d)
+  expect_equal(attr(al, "resolution"), 4)
+  expect_match(al$aliased_with[al$term == "A:B"], "C:D")
+  d5 <- lca_doe_design(setNames(rep(list(0:1), 5), LETTERS[1:5]), type = "frac", p = 2)
+  expect_equal(attr(lca_doe_aliases(d5), "resolution"), 3)
+  d62 <- lca_doe_design(setNames(rep(list(0:1), 6), LETTERS[1:6]), type = "frac", p = 2)
+  expect_equal(nrow(d62), 16); expect_equal(attr(lca_doe_aliases(d62), "resolution"), 4)
+  expect_error(lca_doe_aliases(lca_doe_design(list(A = 0:1, B = 0:1))))
+})
+
+test_that("experimental mode recovers known effects and gives p-values", {
+  d <- lca_doe_design(list(A = c(0, 1), B = c(0, 1), C = c(0, 1)), replicates = 3)
+  X <- attr(d, "coded")
+  set.seed(10)
+  y <- 10 + 2 * X[, "A"] + 1 * X[, "B"] + 0.5 * X[, "A"] * X[, "B"] + rnorm(nrow(X), sd = 0.2)
+  e <- lca_doe_effects(d, y)
+  expect_s3_class(e, "lca_effects")
+  g <- function(t) e$effect[e$term == t]
+  expect_equal(g("A"), 4, tolerance = 0.1); expect_equal(g("B"), 2, tolerance = 0.2)
+  expect_equal(g("A:B"), 1, tolerance = 0.3)
+  expect_lt(e$p_value[e$term == "A"], 0.001)
+  expect_gt(e$p_value[e$term == "C"], 0.01)
+  expect_true(all(e$lower < e$effect & e$effect < e$upper))
+  expect_error(lca_doe_effects(lca_doe_design(list(A = 0:1, B = 0:1)), c(1, 2, 3, 4)))
+})
+
+test_that("model mode: deterministic effects equal direct contrasts", {
+  m <- toy()
+  d <- lca_doe_design(list(steel = c(1, 2), gas = c(1, 3)))
+  fun <- function(m, lv) lca_scale(lca_scale(m, "steel", "product", lv$steel), "gas", "elec", lv$gas)
+  r <- lca_doe_run(m, d, fun, c(product = 1), "GWP100")
+  expect_length(r$scores, 4)
+  s <- function(a, b) lca_calc(fun(m, list(steel = a, gas = b)), c(product = 1), "GWP100")$score
+  e <- lca_doe_effects(r)
+  expect_equal(attr(e, "mode"), "model")
+  expect_equal(e$effect[e$term == "steel"], ((s(2, 1) + s(2, 3)) - (s(1, 1) + s(1, 3))) / 2, tolerance = 1e-12)
+  expect_equal(e$effect[e$term == "gas"], ((s(1, 3) + s(2, 3)) - (s(1, 1) + s(2, 1))) / 2, tolerance = 1e-12)
+  expect_true(all(is.na(e$prob_positive)))
+  expect_false("p_value" %in% names(e))
+})
+
+test_that("model mode with Monte Carlo uses common random numbers", {
+  m <- toy()
+  d <- lca_doe_design(list(steel = c(1, 2)))
+  fun <- function(m, lv) lca_scale(m, "steel", "product", lv$steel)
+  r <- lca_doe_run(m, d, fun, c(product = 1), "GWP100", n = 60, seed = 4)
+  expect_equal(dim(r$scores), c(2, 60))
+  lo <- as.numeric(unclass(lca_mc(fun(m, list(steel = 1)), c(product = 1), "GWP100", 60, seed = 4))[, 1])
+  hi <- as.numeric(unclass(lca_mc(fun(m, list(steel = 2)), c(product = 1), "GWP100", 60, seed = 4))[, 1])
+  expect_equal(r$scores[1, ], lo); expect_equal(r$scores[2, ], hi)
+  e <- lca_doe_effects(r)
+  expect_equal(e$effect, mean(hi - lo), tolerance = 1e-12)
+  expect_equal(e$prob_positive, mean(hi - lo > 0))
+  expect_true(e$lower < e$effect && e$effect < e$upper)
+  expect_output(print(e), "no p-values")
+})
+
+test_that("lca_scale shifts lognormal location and validates", {
+  m <- toy()
+  m2 <- lca_scale(m, "gas", "elec", 2)
+  i <- which(m$ex$input == "gas" & m$ex$output == "elec")
+  expect_equal(m2$ex$amount[i], 2 * m$ex$amount[i])
+  expect_equal(m2$ex$loc[i], m$ex$loc[i] + log(2))
+  expect_equal(m2$ex$scale[i], m$ex$scale[i])
+  expect_error(lca_scale(m, "gas", "elec", -1)); expect_error(lca_scale(m, "x", "y", 2))
+})
+
+test_that("effects plot", {
+  skip_if_not_installed("ggplot2")
+  d <- lca_doe_design(list(A = 0:1, B = 0:1), replicates = 2)
+  X <- attr(d, "coded"); set.seed(1)
+  e <- lca_doe_effects(d, 5 + X[, "A"] + rnorm(8, sd = 0.1))
+  p <- plot_effects(e)
+  expect_s3_class(p, "ggplot"); expect_no_error(ggplot2::ggplot_build(p))
+})
+
+test_that("effects plot labels sit beyond the interval", {
+  skip_if_not_installed("ggplot2")
+  m <- toy()
+  d <- lca_doe_design(list(steel = c(1, 2)))
+  r <- lca_doe_run(m, d, function(m, lv) lca_scale(m, "steel", "product", lv$steel),
+                   c(product = 1), "GWP100", n = 50, seed = 1)
+  e <- lca_doe_effects(r)
+  p <- plot_effects(e)
+  expect_true(all(p$data$pos >= p$data$upper | p$data$effect < 0))
+  expect_match(p$data$label[1], "\\[")
+  expect_no_error(ggplot2::ggplot_build(p))
+})
+
+test_that("effect labels have no padding spaces", {
+  skip_if_not_installed("ggplot2")
+  m <- toy()
+  d <- lca_doe_design(list(steel = c(1, 2), gas = c(1, 3)))
+  fun <- function(m, lv) lca_scale(lca_scale(m, "steel", "product", lv$steel), "gas", "elec", lv$gas)
+  e <- lca_doe_effects(lca_doe_run(m, d, fun, c(product = 1), "GWP100", n = 50, seed = 1))
+  expect_false(any(grepl(",  |\\[ ", plot_effects(e)$data$label)))
+})

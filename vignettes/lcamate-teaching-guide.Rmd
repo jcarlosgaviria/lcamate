@@ -1,0 +1,129 @@
+---
+title: "Teaching guide: exercises and review criteria / Guía para el docente"
+author: "Juan C. Gaviria-Chaverra"
+date: "`r Sys.Date()`"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{Teaching guide: exercises and review criteria / Guía para el docente}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r setup, include = FALSE}
+knitr::opts_chunk$set(collapse = TRUE, comment = "#>")
+library(lcamate)
+ext <- function(...) system.file("extdata", ..., package = "lcamate")
+```
+
+This guide goes with the tutorials *lcamate-tutorial* (English) and
+*lcamate-tutorial-es* (Español), which use **invented data**. Esta guía acompaña a
+los tutoriales y usa **datos inventados**.
+
+## English
+
+### Aims
+
+After the course unit a student can (1) build a model from tables of exchanges,
+(2) read scores and contributions, (3) distinguish the *interval* of a result
+from the *Monte Carlo error*, (4) read the *uncertainty coverage* and say what
+it implies, (5) compare two alternatives with a paired simulation and report an
+effect size, and (6) state what the data do **not** allow to conclude.
+
+### Exercises
+
+1. **Contributions.** Which process dominates the reusable cup? What would you
+   need to know about it to improve the estimate?
+2. **Precision.** Run `lca_mc()` with 100, 1000 and 10000 iterations and the
+   same seed. What changes in the interval and what in the Monte Carlo error?
+3. **Coverage.** Fix all lognormal exchanges (set `utype` to 0) except one.
+   What happens to the coverage and to the interval? What does a narrow
+   interval mean in that case?
+4. **Pairing.** Repeat the comparison with `paired = FALSE`. Why is the
+   interval wider? Which alternative looks better and with what probability?
+5. **Break-even.** Find, with `lca_scale()`, the number of uses at which the two
+   deterministic scores are equal. Then ask: how would you report the
+   uncertainty of that number?
+6. **Design.** Which of the three factors of the tutorial has the largest
+   effect? Change the levels (for example uses between 20 and 60). Does the
+   ranking change?
+7. **Pedigree.** Remove the distributions and score two processes. Write down
+   why you chose each score. Compare your scores with a classmate's and see how
+   much the scenario interval changes.
+8. **Report.** Produce a report with `lca_report()`, and edit the goal and the
+   assumptions so that a reader knows the data are invented.
+
+### Criteria for review
+
+A good answer, whatever the numbers:
+
+* states the functional unit and the units of every result;
+* reports an interval or a probability together with the coverage, not a single
+  number;
+* does **not** use a p-value on simulated draws;
+* separates what comes from the data from what was assumed (for example the
+  pedigree scenario);
+* does not conclude that one cup is "better" from invented data, and says what
+  real data would be needed.
+
+Because the data are invented, there is no "correct" ranking. The checks below
+only verify that students reproduce the computations.
+
+```{r check}
+m <- lca_model(read.csv(ext("cup_exchanges.csv")), read.csv(ext("cup_cf.csv")))
+c(disposable = lca_calc(m, c(serving_disposable = 1), "GWP100")$score,
+  reusable   = lca_calc(m, c(serving_reusable = 1),   "GWP100")$score)
+```
+
+The deterministic values above can be used to check that a student's model was
+built correctly (the data are the same for everyone). Stochastic results depend
+on `seed` and `n`: ask students to report both.
+
+## Español
+
+### Objetivos
+
+Al terminar la unidad, el estudiante puede (1) construir un modelo a partir de
+tablas de intercambios, (2) leer resultados y contribuciones, (3) distinguir el
+*intervalo* de un resultado del *error de Monte Carlo*, (4) leer la *cobertura
+de incertidumbre* y decir qué implica, (5) comparar dos alternativas con una
+simulación pareada y reportar un tamaño de efecto, y (6) decir qué es lo que los
+datos **no** permiten concluir.
+
+### Ejercicios
+
+1. **Contribuciones.** ¿Qué proceso domina el vaso reutilizable? ¿Qué
+   necesitaría saber de él para mejorar la estimación?
+2. **Precisión.** Corra `lca_mc()` con 100, 1000 y 10000 iteraciones y la misma
+   semilla. ¿Qué cambia en el intervalo y qué en el error de Monte Carlo?
+3. **Cobertura.** Deje fijos todos los intercambios lognormales (ponga `utype`
+   en 0) salvo uno. ¿Qué pasa con la cobertura y con el intervalo? ¿Qué
+   significa un intervalo estrecho en ese caso?
+4. **Pareo.** Repita la comparación con `paired = FALSE`. ¿Por qué el intervalo
+   es más ancho? ¿Qué alternativa parece mejor y con qué probabilidad?
+5. **Punto de equilibrio.** Encuentre, con `lca_scale()`, el número de usos en
+   que los dos resultados deterministas son iguales. Luego pregúntese: ¿cómo
+   reportaría la incertidumbre de ese número?
+6. **Diseño.** ¿Cuál de los tres factores del tutorial tiene el mayor efecto?
+   Cambie los niveles (por ejemplo usos entre 20 y 60). ¿Cambia el orden?
+7. **Pedigrí.** Quite las distribuciones y califique dos procesos. Escriba por
+   qué eligió cada puntaje. Compare sus puntajes con los de un compañero y vea
+   cuánto cambia el intervalo del escenario.
+8. **Informe.** Genere un informe con `lca_report()` y edite el objetivo y los
+   supuestos para que un lector sepa que los datos son inventados.
+
+### Criterios de revisión
+
+Una buena respuesta, sean cuales sean los números:
+
+* indica la unidad funcional y las unidades de cada resultado;
+* reporta un intervalo o una probabilidad junto con la cobertura, no un número
+  suelto;
+* **no** usa un valor p sobre valores simulados;
+* separa lo que viene de los datos de lo que se supuso (por ejemplo el escenario
+  de pedigrí);
+* no concluye que un vaso sea "mejor" con datos inventados, y dice qué datos
+  reales harían falta.
+
+Como los datos son inventados, no hay un orden "correcto". La verificación de
+arriba solo comprueba que los estudiantes reproducen los cálculos. Los
+resultados estocásticos dependen de `seed` y `n`: pida que se reporten ambos.

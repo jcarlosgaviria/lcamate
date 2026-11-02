@@ -1,0 +1,584 @@
+process,name
+00f5094f-9d1b-34f7-8789-b653415d8404,"Electricity - COAL - Associated Electric Cooperative, Inc."
+00ffef59-551a-3b98-9ce8-580729c21ed6,Electricity - SOLAR - Arizona Public Service Company
+016b0834-3427-339e-a43f-6814b8cd91bf,Electricity; at grid; generation mix - Southeastern Power Administration
+02a51a69-f337-3a6e-bf69-db3be6d1c1e3,Electricity - WIND - Southwestern Power Administration
+02b15fe4-1290-3b4a-863d-2928946b0592,Electricity - SOLAR - New York Independent System Operator
+0353a2f3-e2d2-3cb7-a33e-e1ac6506e5f2,Electricity - WIND - Tennessee Valley Authority
+03a48208-dfdf-37cf-bd51-6de0373c99fb,Electricity - SOLARTHERMAL - Nevada Power Company
+03ec539f-e261-340b-be74-92abbe2e21ce,Electricity - COAL - Duke Energy Progress East
+04287680-954c-33c9-bf82-891492a5935b,Electricity - MIXED - Florida Power & Light Co.
+04fb071a-862a-3d9c-9a23-e099b2d0fa55,Electricity - NUCLEAR - Florida Power & Light Co.
+064e58e5-30e1-33e5-8a46-2462d61dbc81,"coal extraction and processing - Powder River Basin, BIT, Surface"
+06af2b42-5406-3917-87c7-ee55ee991450,"Electricity - NUCLEAR - PJM Interconnection, LLC"
+06f579fe-a07b-39b3-a98f-0af893c7532b,"Electricity - WIND - NaturEner Wind Watch, LLC"
+06fa7257-882f-30f8-b71d-dbf88b140329,power plant construction - coal_const - Duke Energy Carolinas
+071c0c94-6cce-3b29-9fc2-3c1175019d8f,Electricity - GAS - Duke Energy Carolinas
+079c9903-9348-3d59-95ab-96b0a1eaa842,Electricity - COAL - GridLiance
+07d9001e-08d9-3800-8d8a-49be767de1c8,Electricity; at grid; generation mix - Hydro-Quebec TransEnergie
+07ec8d17-979d-3abd-abe8-751806dae5d7,Electricity - NUCLEAR - Salt River Project Agricultural Improvement and Power District
+08047cd5-14f5-33cb-b925-2c4588ed86b8,power plant construction - ngcc_const - Seminole Electric Cooperative
+081ab69f-62e1-37cd-b174-f8b092dd0442,Electricity - HYDRO - Duke Energy Progress East
+088b92dd-7a3b-340f-b7a7-0f7c2a52a37c,Electricity - SOLAR - Western Area Power Administration - Rocky Mountain Region
+0891c56f-6239-3713-895a-c03ddbb7c73d,Electricity; at grid; generation mix - Salt River Project Agricultural Improvement and Power District
+095cdd29-7a72-3832-a422-cb4a02de96a2,"Electricity - COAL - Southern Company Services, Inc. - Trans"
+0a087985-9131-3164-9ed0-4f366de35f85,"Electricity - WIND - Avangrid Renewables, LLC"
+0a09514d-850f-3ed9-a93c-54307d56cc7b,power plant construction - solar_pv_const - Gainesville Regional Utilities
+0a76df08-dbe9-3247-b597-2e318cfa8cbd,Electricity - GAS - Southwest Power Pool
+0a9880e1-bf1a-3804-8a2a-d65479172f68,Electricity; at grid; generation mix - Duke Energy Progress East
+0b43fe37-0128-3e68-8b77-eab8724ddf38,"Electricity - SOLAR - Duke Energy Florida, Inc."
+0ba98f12-a544-3c75-a2c0-538765b7b5e9,"Electricity; at grid; generation mix - Midcontinent Independent System Operator, Inc."
+0bd6f9bd-6b13-3f87-af67-86d5ecbaedff,Electricity - OIL - Louisville Gas and Electric Company and Kentucky Utilities Company
+0c377003-27c2-3175-9ecd-32d867c2e049,Electricity - COAL - Salt River Project Agricultural Improvement and Power District
+0c580208-20ef-3985-b3dd-9bcbba3f2e7c,Electricity - BIOMASS - Florida Power & Light Co.
+0c5b364c-bebe-356e-aff7-8c4d294d2d22,Electricity - SOLAR - Bonneville Power Administration
+0d8e9e8d-f3a7-3781-af23-306523811c4a,"Transport, single unit truck; electricity powered; Alaska"
+0da2314a-cfe7-32fe-8d51-a7250487cd35,power plant construction - solar_pv_const - Arizona Public Service Company
+0e72e345-da1e-3abb-9b3d-b3a010f33e75,Electricity - SOLAR - Balancing Authority of Northern California
+0ee4ec84-7cf5-328f-a759-23f47d1d6c82,Electricity - SOLAR - El Paso Electric Company
+0f1d050a-5a73-3812-a217-bdf1ecba9a58,Electricity - SOLAR - Salt River Project Agricultural Improvement and Power District
+0f3279ed-d33e-32ff-8584-75495202437e,Electricity - BIOMASS - Nevada Power Company
+0f3ee075-a641-3505-9861-308a49456dbd,Electricity - HYDRO - Nevada Power Company
+0f81aac7-122e-3f6e-af41-0b12b1bc92b5,Electricity; at grid; generation mix - Portland General Electric Company
+0f922730-2703-3c40-ac0e-7ee9cbb089cd,power plant construction - solar_pv_const - Hawaiian Electric Co Inc
+0fd1be21-b6b2-356c-b9ea-77df4627cd51,Electricity - COAL - Arizona Public Service Company
+10869ed6-00e8-3c62-8a41-461059d011cf,power plant construction - wind_const - New York Independent System Operator
+1121b4ee-ce9e-329a-a56f-439310a10a67,Electricity - GAS - Salt River Project Agricultural Improvement and Power District
+112e92d6-a443-3fe1-a2c2-5684dec75d94,Electricity - SOLAR - Tennessee Valley Authority
+11c10d94-208f-37b0-9139-8668908e2924,"Electricity - HYDRO - Associated Electric Cooperative, Inc."
+11c82858-46f7-38cb-b7a6-1536006a87ad,Electricity - ALL - Ontario IESO
+11e19306-f965-3911-9e07-a598e186be84,"Electricity - BIOMASS - Duke Energy Florida, Inc."
+12ebeef3-f4df-3930-ad2f-ea852d8aa387,Electricity - HYDRO - Seattle City Light
+147bdbaa-8aac-3270-9a56-64deb70e1631,Electricity; at grid; generation mix - Balancing Authority of Northern California
+151ad7aa-f2df-3821-826c-666b1eb1a2e6,power plant construction - ngcc_const - Nevada Power Company
+15920ae0-225b-3170-b208-0d2aad84c8e3,Electricity; at grid; generation mix - Public Service Company of Colorado
+16591676-1008-36c8-96c0-85146985022c,Electricity - HYDRO - Southeastern Power Administration
+169877b4-1c97-3601-8c8a-1fc5ec15a1c6,power plant construction - wind_const - California Independent System Operator
+16a8a55f-c9aa-39bb-910b-6665ba548b60,Electricity - MIXED - Tampa Electric Company
+16b7bf17-1e96-37ce-9561-8840443868eb,Electricity - WIND - NorthWestern Corporation
+174bc777-c2e2-3083-98d9-e70d4c0f9feb,"Electricity - HYDRO - Public Utility District No. 2 of Grant County, Washington"
+187d5871-0945-33f7-a289-3f9d4302f173,Electricity - GAS - Tucson Electric Power
+194db96a-4ce0-3fa7-8305-ba3efd823095,"Electricity - MIXED - Midcontinent Independent System Operator, Inc."
+19f5ed7a-d617-32e0-bc78-9c7cfc547608,petroleum extraction and processing - DFO PADD 1
+1a369e77-50aa-3cb6-96a9-662938ea6741,Electricity - WIND - Nevada Power Company
+1b9ae0b6-b065-3894-8add-bd44f97b11a9,power plant construction - ngcc_const - California Independent System Operator
+1bb4abd1-6f51-3c6d-a3cb-b1f75ddf28dd,Electricity - COAL - Public Service Company of Colorado
+1bb8310d-10ae-39d4-acbc-20384af00bb5,Electricity - GAS - Idaho Power Company
+1d76ff0d-166f-31ab-a320-8fddd0d8b2ea,Electricity - SOLAR - Portland General Electric Company
+1e50e8e4-5504-3446-8f6a-a3a407ba64b1,Electricity - GAS - Turlock Irrigation District
+1e681051-a654-3527-a2cd-33d3f39fbc8c,Electricity - HYDRO - Public Utility District No. 1 of Chelan County
+1ed2f02b-a5b8-37e8-a631-3ad98327b0f0,Electricity - NUCLEAR - California Independent System Operator
+1ed47280-21de-30ea-98f1-a654e697faca,"Electricity - HYDRO - Midcontinent Independent System Operator, Inc."
+1ed52022-644f-3653-9a6d-27f43c2da3bd,Electricity - MIXED - Los Angeles Department of Water and Power
+1f3a1c25-524a-361c-86e7-88b6b6d54bc5,power plant construction - ngcc_const - Bonneville Power Administration
+1fc21555-e9a5-37f0-a284-3f49bb0ef484,Electricity - GAS - California Independent System Operator
+20449509-bd28-3f60-8be3-f6a8a17c1ff9,power plant construction - coal_const - Bonneville Power Administration
+21726cab-f082-344c-992e-56c5bbc98307,power plant construction - solar_pv_const - New York Independent System Operator
+227c5952-3107-3195-b9cd-4f617f1ada5c,"power plant construction - wind_const - NaturEner Wind Watch, LLC"
+2315b9e4-5658-3128-99b0-a729659586bc,"Electricity; at grid; generation mix - Electric Reliability Council of Texas, Inc."
+231a4479-075b-3667-8553-6b3bf9234744,power plant construction - ngcc_const - Turlock Irrigation District
+23479873-da1a-3370-b4cf-a7df555e06d2,"Electricity - BIOMASS - PJM Interconnection, LLC"
+23864ebf-733f-3004-935d-7a5f2d8cc688,Electricity - SOLAR - JEA
+2438e27e-ed0d-3c55-b352-3295e91ca32f,power plant construction - ngcc_const - Tampa Electric Company
+24edfdfe-02d6-3f24-8323-69563f33ac1b,coal transport - Barge
+2500a035-62b8-3f63-9973-2aab7c25fb1f,power plant construction - ngcc_const - Public Service Company of New Mexico
+25c406dd-ff89-39bb-aef4-db059c726838,"Electricity; at grid; generation mix - Puget Sound Energy, Inc."
+25d68eed-7d2f-3997-9eab-94d5f69a1381,power plant construction - wind_const - Arizona Public Service Company
+26061ce9-e8a1-3952-8e31-98d934e0d7e9,"Electricity - OIL - Southern Company Services, Inc. - Trans"
+2643e157-d7e5-3711-85c2-b93593b4ecea,"Electricity - HYDRO - Southern Company Services, Inc. - Trans"
+26625c76-0b25-33f1-841b-ae96bc348ffb,power plant construction - wind_const - Public Service Company of Colorado
+26e17e8c-50a8-3a6f-a593-a16a5c87c5da,Electricity - MIXED - Western Area Power Administration - Desert Southwest Region
+2778aea2-d3f8-36ef-a84d-3e20cee92bdc,Electricity - BIOMASS - Avista Corporation
+2817aa91-8bbb-3df9-8d86-9fef3e71f196,power plant construction - ngcc_const - Public Service Company of Colorado
+288e6c51-57dc-36cd-887b-22a107abe8fe,"coal extraction and processing - Northern Appalachia, BIT, Surface"
+28f997c8-9ba0-3c33-a31a-604ec5ef4456,power plant construction - solar_pv_const - Florida Municipal Power Pool
+29359548-65c3-3f33-b553-ac4d37674987,Electricity - HYDRO - Southwest Power Pool
+2a02a37f-8433-3b6e-92c9-94818013f9da,"power plant construction - solar_pv_const - PJM Interconnection, LLC"
+2abcdb88-639b-3413-b446-5b1427b1835b,power plant construction - ngcc_const - Los Angeles Department of Water and Power
+2b912294-6a34-3089-90f5-5f8fd3d1c08c,Electricity - HYDRO - ISO New England
+2bfcd5b8-fe9f-33f2-b280-1a844eafd40a,Electricity - COAL - Western Area Power Administration - Rocky Mountain Region
+2c1a641e-b6be-35a0-ab45-03ebd7a75f72,"Electricity - SOLAR - PJM Interconnection, LLC"
+2cb4d329-38bb-330f-94b8-f6436e2ee870,Electricity - HYDRO - Imperial Irrigation District
+2cc5a709-3078-3459-a4f1-1db45594ade6,power plant construction - solar_pv_const - Avista Corporation
+2e568e70-09aa-3375-b6ff-ab3f9b94710e,Electricity - BIOMASS - PacifiCorp East
+2e94084d-ffad-3183-9078-ad113e8083de,"Electricity; at grid; generation mix - Gridforce Energy Management, LLC"
+2edd66d5-e23d-3550-8565-9239956c2f77,Electricity; at grid; generation mix - PUD No. 1 of Douglas County
+2f334124-19c9-3241-bb4e-9b86e92a5521,Electricity; at grid; generation mix - Idaho Power Company
+2fcd8b04-3963-34dc-9053-b3744c141b21,Electricity; at grid; generation mix - Turlock Irrigation District
+2fe4f601-2472-3bec-9032-de659d9a9a7a,Electricity; at grid; generation mix - Avista Corporation
+30c79fce-2daf-31d2-b5b5-501546879c53,Electricity - GAS - Balancing Authority of Northern California
+3105a633-3f8b-3ffa-951c-7e94737f1063,"Electricity; at grid; generation mix - Dominion Energy South Carolina, Inc."
+3157555a-f4f7-3bed-a83a-6f6b5a9f0b32,power plant construction - wind_const - Gridforce South
+325bd294-8024-35d1-9762-a2bd0f043e28,"power plant construction - solar_pv_const - Southern Company Services, Inc. - Trans"
+325d044f-fab1-370f-84b3-dc990870f935,Electricity - HYDRO - Duke Energy Carolinas
+32c4f9e6-6e80-3265-b658-086f0d0ae270,Electricity - WIND - Tucson Electric Power
+3378c3fe-8709-34d1-97b9-379ca4532219,Electricity - SOLAR - Duke Energy Carolinas
+345cbd68-3b1b-3c19-b27c-91e9d9851c0c,"Transport, single unit truck; electricity powered; Northeast"
+34bfd935-4a10-3410-ab3f-01b233f60d5f,power plant construction - wind_const - Nevada Power Company
+350f9d1d-9c1b-3c18-975e-f7f4b330d944,Electricity - MIXED - New York Independent System Operator
+35634ee3-25f2-3ae5-8988-31ad3f422c3f,Electricity - NUCLEAR - Tennessee Valley Authority
+35b66e2e-6956-38e2-b6a5-7519f439305e,Electricity - HYDRO - Portland General Electric Company
+35df14c9-b240-35fe-b03d-ec6404edca83,"Electricity; at grid; generation mix - PJM Interconnection, LLC"
+365b8e44-c781-3100-96bf-a8ef25983b74,"Electricity - OIL - PJM Interconnection, LLC"
+370413b1-59bc-39aa-a3c3-f6fe62eacd3d,power plant construction - ngcc_const - El Paso Electric Company
+379b1599-eec1-35df-9202-737bffeccb86,Electricity - ALL - Manitoba Hydro
+386dfb61-4fcd-3321-a7bf-5715c8a6f6b4,Electricity - SOLAR - Southwest Power Pool
+3882fa0e-6f8d-36d7-8111-22e78dd16930,petroleum extraction and processing - RFO PADD 1
+397cf112-5223-3b60-8d55-975ce181630a,"Electricity - OIL - Electric Reliability Council of Texas, Inc."
+398c7cd8-141e-3c96-8ef0-90b8772a1e9d,Electricity - MIXED - Portland General Electric Company
+3a13a656-a2aa-3d59-85c0-85b35652f0f9,"Electricity; at grid; generation mix - NaturEner Wind Watch, LLC"
+3a5d43b8-02c9-368c-bde9-8889af2dc4dc,Electricity; at grid; generation mix - Public Utility District No. 1 of Chelan County
+3ab6cce4-0eae-3fd5-93be-eb5048cfad8c,"power plant construction - coal_const - PJM Interconnection, LLC"
+3b1c5127-d0e9-3b8c-9465-7356f31dbb94,Electricity - BIOMASS - Gainesville Regional Utilities
+3b2eb92d-0bcf-3669-be4d-29a1bfe110ee,Electricity - GAS - Public Service Company of Colorado
+3b4072c8-5e93-3af4-8ec8-2929388bda35,petroleum extraction and processing - RFO PADD 2
+3b5ebbdc-a7f4-3bac-8c20-65b4fc652180,power plant construction - solar_pv_const - Western Area Power Administration - Rocky Mountain Region
+3bf3095d-a77c-3fe7-b94c-6ccc6d89af8b,Electricity - WIND - Bonneville Power Administration
+3bfbf2cd-db6d-3d46-942a-40595a49c5ac,Electricity - GEOTHERMAL - Imperial Irrigation District
+3c683350-d64c-3214-bbf5-aa4422e39362,Electricity; at grid; generation mix - Gridforce South
+3d8d9c18-22b9-3cda-b6d5-4ac4618d201c,power plant construction - ngcc_const - US Average
+3ea76335-a548-3a86-87c3-1e09c89bb18a,Electricity - SOLAR - Nevada Power Company
+3ecba866-863a-362d-9dce-37c1d903c112,Electricity - GAS - City of Tallahassee
+3efbff87-1f59-3f16-b854-33e597eeda12,Electricity - BIOMASS - Southwest Power Pool
+3f0831f4-337b-3b04-aa50-0f95f7521478,Electricity - GAS - Avista Corporation
+3f2e1742-5e33-37e3-8304-a0967f76a31a,natural gas extraction and processing - Permian
+408f5779-30bb-343b-8435-d0252fee4a4f,power plant construction - solar_pv_const - Portland General Electric Company
+41ea1fbc-b968-3ce5-964e-2799ac962051,"Electricity - OIL - Midcontinent Independent System Operator, Inc."
+421af73c-0dfd-32c8-ae60-bd01fcc220fb,power plant construction - wind_const - Western Area Power Administration - Desert Southwest Region
+436baf5d-ede5-32f4-aa4b-64f55cd958a7,"Electricity - SOLAR - Dominion Energy South Carolina, Inc."
+43d58d52-2657-361d-94b3-5e8e0863d94d,"coal extraction and processing - Lignite, LIG, Surface"
+44a2cae7-8a93-3001-b1c8-a88c66bc10fe,Electricity - GEOTHERMAL - Nevada Power Company
+44a322d4-3d05-3f69-b83d-73a35397b61a,Electricity - HYDRO - Western Area Power Administration - Desert Southwest Region
+45159328-a787-3dc3-875f-f046e4283fa4,"Electricity - GAS - Puget Sound Energy, Inc."
+45a840d7-2567-324b-aa2c-323f9f483d40,"coal extraction and processing - Central Interior, BIT, Surface"
+471b0349-97f4-32b4-8c11-cd04149122b4,Electricity - OIL - Florida Power & Light Co.
+471c337d-6afe-3d6a-8882-9bd230139aec,power plant construction - solar_pv_const - Southwestern Power Administration
+47a45f7b-ed52-3807-9ff1-ebe190cd1db7,Electricity; at grid; generation mix - Western Area Power Administration - Upper Great Plains West
+47c496ef-5dfa-36db-aeba-120d0967da45,Electricity - BIOMASS - Tennessee Valley Authority
+47ce27c3-90d3-324e-9462-d27042ce2f5a,"Electricity - BIOMASS - Electric Reliability Council of Texas, Inc."
+487af89b-83b8-32e1-a8c7-245aa2ef0832,"Electricity; at grid; generation mix - NaturEner Power Watch, LLC"
+490d564e-1757-35e5-8bd9-2c81b06ab769,Electricity - OIL - Tennessee Valley Authority
+4951c10c-ea79-37bd-bc0e-d17185bfb437,Electricity; at grid; generation mix - Tampa Electric Company
+49bdb021-3c91-32c5-82b6-951073a5e62a,Electricity - SOLAR - Duke Energy Progress East
+49d79f8e-b861-3924-bd82-b96094ca65cd,Electricity - HYDRO - Avista Corporation
+4a0629b8-569d-30f1-81e6-da2a6cc7bbff,"Electricity - BIOMASS - Southern Company Services, Inc. - Trans"
+4a087d39-4b4d-35f8-b7e5-0ab57b8017e9,"power plant construction - ngcc_const - Southern Company Services, Inc. - Trans"
+4a518a1a-4846-309e-b5ed-16b3935e2b9b,"power plant construction - ngcc_const - Associated Electric Cooperative, Inc."
+4a8fcace-56b5-31e3-babe-1dd36ca18271,Electricity - COAL - NorthWestern Corporation
+4b7a6fe4-0534-316c-8f9d-46ce4268eeee,Electricity - MIXED - Bonneville Power Administration
+4be0eda6-df1b-3dbc-a6cc-3a7eb82768e1,Electricity - GAS - New York Independent System Operator
+4c0b8760-05c7-3ef4-bcae-d6e94f4d0097,Electricity; at user; consumption mix - Southwest - FERC
+4c384d7e-3e7a-3606-ab41-743cca7e0794,Electricity - GAS - Seminole Electric Cooperative
+4c475045-e4f3-3a71-861e-b7bb0c0011c4,"Electricity - SOLAR - Southern Company Services, Inc. - Trans"
+4c9543ee-cd09-3434-b3a1-37743b5a60cb,"Electricity - NUCLEAR - Southern Company Services, Inc. - Trans"
+4cde9a9a-d930-3ca5-a13d-f7c595a8419f,Electricity - GAS - South Carolina Public Service Authority
+4d06d1cb-dab3-30a9-9ee7-e4b78beb28ba,"coal extraction and processing - Gulf Lignite, LIG, Surface"
+4d374617-5459-3474-9f18-f0b495b530b3,"Electricity; at grid; generation mix - Arlington Valley, LLC"
+4d4248f3-9e4c-3120-b708-dccc099b2914,power plant construction - coal_const - Western Area Power Administration - Desert Southwest Region
+4ed0672c-3507-3c64-b3f8-8c446f27a3cf,power plant construction - ngcc_const - Balancing Authority of Northern California
+4ed2e5c4-88f2-34be-8cd2-419215086195,Electricity; at grid; generation mix - Duke Energy Progress West
+4ed77814-86f5-3ed8-985e-6e1afc0ba057,Electricity - WIND - Gridforce South
+50322b03-5add-38fa-a684-dd140492dc26,Electricity - SOLAR - NorthWestern Corporation
+503f1ece-ede0-3c82-b52b-e65d13c8f697,Electricity - WIND - PacifiCorp East
+50b674c7-4ccc-321a-9d08-43058e790cf9,petroleum extraction and processing - DFO PADD 3
+50f2d915-c737-3ecd-a6bf-e4f55809a9f2,power plant construction - solar_pv_const - South Carolina Public Service Authority
+516feb44-f3b8-3226-8615-c91824a16877,Electricity; at grid; generation mix - Tucson Electric Power
+519b0000-9e11-3a0d-96d8-fe0ce2f63ec8,Electricity; at user; consumption mix - CAISO - FERC
+53e4de5d-203b-376f-beb3-bbdc9fd1ec03,"coal extraction and processing - West/Northwest, BIT, Underground"
+53fe40de-ea70-4506-9196-eeed6bfe9a5e,Effluent release; from 5-stage bardenpho membrane bioreactor with sidestream reverse osmosis; level 5-2 wastewater treatment plant
+54ae7721-2a23-3aa3-a917-4687581a5015,"Electricity - MIXED - Southern Company Services, Inc. - Trans"
+55a0025a-c41a-3de6-9afa-20e1f138ad6c,Electricity - GAS - Portland General Electric Company
+568e9061-3184-3d1c-a34f-81b8619ca40f,Electricity - BIOMASS - Los Angeles Department of Water and Power
+5805c35a-4083-3263-b2f8-62d696587c40,Electricity - BIOMASS - Imperial Irrigation District
+584e72ac-e367-37c9-8fb9-12ceb749b4b9,"Transport, light commercial truck; electricity powered; South"
+590afda2-bb18-3353-9e28-2a8cf66daa5e,power plant construction - wind_const - Los Angeles Department of Water and Power
+593a96d2-78d2-36a8-9164-4c6535f9f5d2,Electricity; at grid; generation mix - Imperial Irrigation District
+59d8e54e-67c5-3f19-811f-c3cce748c840,"coal extraction and processing - Central Appalachia, BIT, Underground"
+5a008e2b-d0a3-3cd8-a8d4-bb2b087faba1,power plant construction - coal_const - Los Angeles Department of Water and Power
+5a1909b4-552e-399c-889e-edeab94b1f52,power plant construction - solar_pv_const - Duke Energy Carolinas
+5a80ccb1-9140-3c58-8d26-87a6c7ff1c86,"coal extraction and processing - Powder River Basin, SUB, Surface"
+5af648c0-1f5a-3d19-a3a2-10906e4543c9,"Electricity - COAL - Dominion Energy South Carolina, Inc."
+5b43c38e-3d21-336e-834e-e00369abf38f,"power plant construction - wind_const - Electric Reliability Council of Texas, Inc."
+5c063124-54fb-3670-9cb6-736675281b2d,Electricity; at grid; generation mix - Western Area Power Administration - Rocky Mountain Region
+5d2207ea-24e6-3b4c-a4e7-3897d4c1a042,"Electricity - SOLAR - Midcontinent Independent System Operator, Inc."
+5d361c32-81e0-3964-8ac4-a0b52d67f0ca,power plant construction - wind_const - El Paso Electric Company
+5d3f8325-d066-3a9e-adda-8e2b5a852330,power plant construction - ngcc_const - Imperial Irrigation District
+5e357fba-c7d7-3d9c-a80e-f4b659e8a7ff,"power plant construction - wind_const - Associated Electric Cooperative, Inc."
+5e6faf27-fddf-3a38-92f8-34dc95e4f268,Electricity - BIOMASS - Arizona Public Service Company
+5fa7c944-1559-3e82-939d-25c518ee0c71,"coal extraction and processing - Rocky Mountain, SUB, Surface"
+6027a2b3-ecd4-366b-8c95-a92cc997c223,Electricity - OIL - NorthWestern Corporation
+60390b04-ab6c-3f2f-9017-7005837e512c,Electricity - HYDRO - Balancing Authority of Northern California
+616d8d0e-edc2-3a37-a0ef-7f995caeb5ea,Electricity - GEOTHERMAL - Public Service Company of New Mexico
+61b90600-9d0a-33bf-92a7-d2573e248722,Electricity - SOLARTHERMAL - California Independent System Operator
+6244affe-a305-30e3-b32a-8aa79c58f320,Electricity - SOLAR - City of Tallahassee
+62e2cf95-8e4f-3cc4-b322-c795639244ed,Electricity - WIND - New York Independent System Operator
+631d0df5-6c68-36f2-80c6-200e899d9c54,"Electricity; at grid; generation mix - New Harquahala Generating Company, LLC"
+63e56501-ebaf-3ed6-85fe-976b23ce7beb,"Electricity - OIL - Associated Electric Cooperative, Inc."
+63e8f409-c5e8-32d5-9ecd-f96637f72275,Electricity - COAL - ISO New England
+65191631-b122-305a-ab51-88a0e4f26c02,Electricity - OIL - Duke Energy Carolinas
+6663366b-e85d-3913-8330-e0a00b503a53,"Electricity - NUCLEAR - Dominion Energy South Carolina, Inc."
+66a7fc5b-a842-372a-a49d-7fba02210f3a,power plant construction - coal_const - Southwestern Power Administration
+66d1437c-4b4e-3343-ba38-add78b0a101d,power plant construction - wind_const - Southwestern Power Administration
+6735ea5f-213f-3b3e-a104-e36c80cb135a,Electricity - WIND - Arizona Public Service Company
+67c7e5dd-bc9f-329d-8b0d-9bb4d7ea0889,Electricity - SOLAR - Southwestern Power Administration
+67e07f69-0d7e-3f4f-b500-3880821b2397,Electricity - WIND - Salt River Project Agricultural Improvement and Power District
+685176ac-a59b-321b-9f9f-f7237114f179,Electricity - SOLAR - Florida Power & Light Co.
+687c25b2-b6b7-32e0-993b-41e040f0bef0,power plant construction - coal_const - Florida Municipal Power Pool
+68c48935-19a6-39d8-828e-19300e28c823,Electricity; at grid; generation mix - Florida Municipal Power Pool
+68c77042-3729-3415-8a08-6ebd96810aba,"coal extraction and processing - West/Northwest, SUB, Surface"
+69ee5906-9c1e-3987-976b-721da6bc5a25,Electricity - GAS - Arizona Public Service Company
+69f6b85c-9901-3ca6-ae6d-c46091c5cfb3,Electricity - HYDRO - Turlock Irrigation District
+6a555e74-7dcd-337d-bcbd-e5b37ee69d23,Electricity; at grid; generation mix - Ontario IESO
+6af03627-2042-348a-9ee8-2ac96fc6b6fc,power plant construction - solar_pv_const - Duke Energy Progress West
+6b14f0ba-b2f2-3eda-83fb-24ee932488cc,coal transport - Railroad
+6b29b221-f34f-3b8b-a968-7bef91cf7d1c,Electricity - GAS - Gainesville Regional Utilities
+6c043569-96d8-3644-81a7-f19c332e1a49,"Transport, combination truck; long-haul; electricity powered; Alaska"
+6d01286c-1f46-3963-a7cf-0e0176791df4,Electricity; at grid; generation mix - GridLiance
+6e19103d-ed39-3b71-8c51-0c65b85002a4,Corn; decomposition; 15.5% moisture
+6e2b7af1-870a-353c-b9f9-a4a663046c2c,Electricity - WIND - Idaho Power Company
+6e463512-53f4-3faf-96b0-f347be22ff1c,coal transport - Ocean Vessel
+6e7a0a71-49c6-36b2-90af-1133196d74a0,"Electricity - HYDRO - Puget Sound Energy, Inc."
+6e85b097-b06a-3fd0-a843-2369aded9ed5,Electricity - HYDRO - Idaho Power Company
+6efd3359-c852-3558-b6a8-cb87baf0c482,Electricity - GAS - JEA
+6f15af3b-5738-3376-80b1-9edce6b803be,Electricity - SOLAR - ISO New England
+6f202a81-10b5-3f63-a8b6-515c53f848f1,Electricity - OIL - Arizona Public Service Company
+6f75e0d7-7944-3a61-ab81-5b7822c883fd,"Electricity - GAS - PJM Interconnection, LLC"
+703522ed-beb8-3f32-9925-506b82d1b041,Electricity - HYDRO - Tennessee Valley Authority
+7068192a-999c-39b6-bf66-234a294bdf92,Electricity; at user; consumption mix - US - US
+70866277-1fd9-3f62-b2b8-62bac605e244,"power plant construction - solar_pv_const - Associated Electric Cooperative, Inc."
+7189e35f-fad9-3d5c-9dad-676e65e4f824,"Electricity; at grid; generation mix - Associated Electric Cooperative, Inc."
+71b3914e-cc27-3f23-99c1-ab635e70ebda,Electricity - GAS - Public Service Company of New Mexico
+72589d63-d490-33ca-9381-c53141e3ffbb,"coal extraction and processing - Illinois Basin, BIT, Underground"
+7285087a-f23b-3422-8d1d-a463581cb8c3,Electricity; at grid; generation mix - South Carolina Public Service Authority
+72af083f-92bd-392b-ae4d-e29bd703ab3a,power plant construction - solar_pv_const - Public Service Company of New Mexico
+72f54d39-a95f-3eff-a078-0adeb72df05b,"Electricity - COAL - Midcontinent Independent System Operator, Inc."
+73f5d1a2-2e7a-3ff6-a974-343527871ce2,Electricity - OIL - Idaho Power Company
+73ffaf1d-86b0-3035-bdaa-604bd8a2c2c1,"Electricity - HYDRO - City of Tacoma, Department of Public Utilities, Light Division"
+754d680e-6a62-3db3-accf-d0f2857510dd,Electricity; at grid; consumption mix - Southwest - FERC
+7563259f-f58a-323d-8420-0cea57026ad8,Electricity - GEOTHERMAL - Idaho Power Company
+757e3799-2bb1-3e15-9001-ab6cfa881643,"Electricity - GAS - Griffith Energy, LLC"
+7598c235-2d87-32e4-a940-25e07f114022,Electricity - HYDRO - Bonneville Power Administration
+75f5cee4-0814-3912-8021-566468c33ec1,Electricity - COAL - Southwestern Power Administration
+76756f72-352a-31ef-ae25-6b1a50696476,Electricity - NUCLEAR - Southwest Power Pool
+7691c4ac-007a-310e-bf6a-7ebaf71681e0,Electricity - MIXED - JEA
+769b5382-a7ae-3c79-aedc-4c228b2e1ef0,Electricity - WIND - California Independent System Operator
+76e67f87-f457-3324-af0a-f50692ee461d,Electricity - BIOMASS - Public Service Company of Colorado
+7799609b-05f9-3c4e-a2b2-8200f267941c,"Electricity - GAS - Electric Reliability Council of Texas, Inc."
+790a91fb-abd9-32f7-8650-62ad9b9e3c19,Electricity; at grid; generation mix - Public Service Company of New Mexico
+79200770-7081-3318-975f-09ea514815e2,Electricity - SOLAR - Los Angeles Department of Water and Power
+7942fc9e-8d1c-38a0-be91-1459c32fc2bd,power plant construction - ngcc_const - Tennessee Valley Authority
+797682d7-2ac1-302f-9042-2f95064f1328,Electricity - MIXED - Tennessee Valley Authority
+7a751006-993e-3854-a2aa-8663f57e016c,"Electricity; at grid; generation mix - Alcoa Power Generating, Inc. - Yadkin Division"
+7b02a420-ca37-3ce9-9dfd-02405076fa4c,"Electricity - MIXED - PJM Interconnection, LLC"
+7b0a1fe7-1e20-3960-a03b-8f8caeaec34b,Electricity - SOLAR - California Independent System Operator
+7b850e46-a80c-3a8f-b3e1-d0dc5f060c2f,Electricity - GAS - PacifiCorp East
+7b900986-1191-3a16-aebe-80c3f0214893,Electricity; at grid; generation mix - PacifiCorp East
+7bd3cc70-dc41-30f1-9ec6-708d0efbe331,power plant construction - ngcc_const - Southwestern Power Administration
+7c01d714-c0b5-33bb-ab05-e1dc750579c2,Electricity - SOLAR - Hawaiian Electric Co Inc
+7c1db744-b75e-3b56-a457-689b8f698ced,Electricity - BIOMASS - Seminole Electric Cooperative
+7c799039-b9af-30fd-a902-9a7e296796e8,Electricity - ALL - Hydro-Quebec TransEnergie
+7d0d84a9-699c-382d-99e5-36542964905a,"Transport, light commercial truck; electricity powered; West"
+7d143c72-8fbc-3be3-855c-120b67483970,Electricity - MIXED - Florida Municipal Power Pool
+7d4f9464-2f61-3446-b872-89a4ff44a790,power plant construction - wind_const - Portland General Electric Company
+7d7e6e63-f161-3e98-8983-8ae53a764033,Electricity; at grid; generation mix - Florida Power & Light Co.
+7e2886cf-b708-3d83-b375-9f5a9be7423a,Electricity; at grid; generation mix - El Paso Electric Company
+7f18060f-81ac-3985-afdd-976caa30cfab,Electricity - SOLAR - Gainesville Regional Utilities
+7f523516-3971-3241-b283-d230aba8887e,natural gas extraction and processing - South Oklahoma
+7f8d805d-e22a-35f3-a29b-1c085c5d074c,coal transport - Truck
+7ff65272-ba66-36e0-9b21-c1ef518c9a3a,Electricity - HYDRO - New York Independent System Operator
+8040ebe0-ccbb-3cdd-ba15-75f7cf97b795,power plant construction - ngcc_const - Avista Corporation
+80446d84-9039-3a3e-9f01-53aa8e4c02bd,petroleum extraction and processing - DFO PADD 5
+80730212-f887-362f-8385-66d5ac76c1b4,Electricity - OIL - New York Independent System Operator
+80a299b5-bee1-3b7c-9020-b225c9864511,"power plant construction - coal_const - Associated Electric Cooperative, Inc."
+80c78d15-eb23-3e8c-91bf-24942d4130b9,Electricity - MIXED - Southwest Power Pool
+80d02d4d-5288-332e-9cc5-ef099ecfdc4e,"power plant construction - coal_const - Electric Reliability Council of Texas, Inc."
+8118084d-2f5c-35c8-a355-e0943a9efbe8,"Transport, combination truck; short-haul; electricity powered; Southwest"
+816cd2a1-5693-3623-a242-91780aa01cc4,"Electricity - OIL - Dominion Energy South Carolina, Inc."
+81719fcc-0d72-30f6-91d2-e17467c195b5,Electricity; at grid; consumption mix - ERCOT - FERC
+81af7350-a541-3c92-8743-0efb66f171c2,power plant construction - solar_pv_const - El Paso Electric Company
+81c7a7e7-a3fc-3ea7-91f3-542f9ea79cbf,"coal extraction and processing - Rocky Mountain, BIT, Processing"
+82b76a85-dd6a-3c14-bd07-767db7a2f5c2,Electricity - GAS - Duke Energy Progress East
+82f6b753-5c47-3d52-9b46-000192b5fa63,Electricity - HYDRO - South Carolina Public Service Authority
+839049ad-e324-36c5-9dae-cf24b5b993e4,power plant construction - wind_const - Bonneville Power Administration
+83f8f627-ab9d-3e6a-9a11-bc1714ea93ab,"coal extraction and processing - Powder River Basin, SUB, Underground"
+8417eebf-8fa8-39e7-a763-6e1d92fbcb3f,"coal extraction and processing - Central Appalachia, BIT, Processing"
+84307b07-3a5c-3a72-b572-c56e0eeff077,Electricity; at grid; generation mix - Duke Energy Carolinas
+845f2dd8-e0a4-3b7e-8a28-e55fbd1be2c4,Electricity - GAS - NorthWestern Corporation
+84745ce7-a6b1-338d-8ad7-e584e96fc27a,Electricity - COAL - Louisville Gas and Electric Company and Kentucky Utilities Company
+865a9ddf-9068-3b1f-84a5-5ba4134610cf,Electricity - NUCLEAR - Bonneville Power Administration
+86aa5699-b56e-3b90-b13e-b841f6c6bdd9,"Electricity - MIXED - Electric Reliability Council of Texas, Inc."
+86b82e86-9e15-346e-a754-cb77b1d36d5d,Electricity - ALL - New Brunswick System Operator
+871d9dd4-09bb-3572-9b75-75048e4a7d7a,"Electricity - GAS - Gridforce Energy Management, LLC"
+87df64ba-5596-36b2-ab0b-34178c40d4de,Electricity; at grid; generation mix - Southwest Power Pool
+8809402f-8265-3914-9604-c728dd1a0aea,Electricity - HYDRO - Public Service Company of Colorado
+8825acc7-c837-3d68-813f-6ae6c0e11c80,"Electricity; at grid; generation mix - Avangrid Renewables, LLC"
+88809f93-64eb-335d-93e0-82f3a9725f43,Electricity; at grid; generation mix - Los Angeles Department of Water and Power
+88ad1a2f-9bf2-3988-83ff-915e519b9b38,power plant construction - ngcc_const - Gainesville Regional Utilities
+8915c01d-f57b-3e6c-84f1-35d784d591de,"power plant construction - ngcc_const - Electric Reliability Council of Texas, Inc."
+894d912b-cda0-313a-b43e-9b56de9fcda3,Electricity - NUCLEAR - Duke Energy Progress East
+8b073a83-751b-3d55-9812-0e473dc37e86,Electricity - SOLAR - PacifiCorp East
+8c6e7552-318f-36d0-a6bd-d2034a34eac1,Electricity; at grid; generation mix - NorthWestern Corporation
+8caa6bbc-3444-36c1-8e6a-72fa111cb682,Electricity; at grid; generation mix - Hawaiian Electric Co Inc
+8d01a30f-06f4-3478-adda-dfa1eb8e3772,Electricity - SOLAR - Public Service Company of Colorado
+8e2326dc-271c-3e56-bbca-84f22d6c7b79,Electricity - MIXED - Louisville Gas and Electric Company and Kentucky Utilities Company
+8ec39c79-803c-35bf-92b2-168d38ab056d,Electricity - SOLAR - Duke Energy Progress West
+8f32eb44-a8c1-3246-9c57-37d962c62a2d,Electricity; at grid; generation mix - Southwestern Power Administration
+8f842837-c680-3fe9-9662-cae9bebafdf3,Electricity - GAS - Bonneville Power Administration
+900aab9b-753f-3c6c-ab88-b108bbb62f6c,Electricity - HYDRO - California Independent System Operator
+905eb1d3-2325-3c65-8fb9-3cff31c784a3,Electricity - GAS - Los Angeles Department of Water and Power
+90935354-6006-335c-9766-4614e9b309ab,Electricity - OIL - Western Area Power Administration - Rocky Mountain Region
+90bc4e3e-8c31-3004-aa17-51366bb8c2cd,"Electricity - GAS - Associated Electric Cooperative, Inc."
+913eb157-e5ef-3d3a-a064-53cf62d5184a,Electricity - MIXED - California Independent System Operator
+916a52d8-0d9b-3336-9816-bc0ea5146f9b,Electricity - MIXED - Imperial Irrigation District
+924b286f-9228-3260-829c-13cb2595b30f,Electricity - HYDRO - Western Area Power Administration - Rocky Mountain Region
+9279532e-655a-35dc-b339-1b101a77ed4f,Electricity - WIND - ISO New England
+927e5654-0b97-3f8f-97cc-18f60b123a9f,Electricity - HYDRO - Los Angeles Department of Water and Power
+9281fba5-c398-31e5-80d0-114f04956876,Electricity; at grid; consumption mix - CAISO - FERC
+92942496-50b5-3e3e-a8a3-d6674e4a9d0f,power plant construction - coal_const - Southwest Power Pool
+92dca37a-887d-3ef4-9415-a54ff715605c,Electricity - BIOMASS - Duke Energy Carolinas
+936a453d-74de-3d15-8baf-8999ffc5dde3,Electricity - WIND - Avista Corporation
+9415ea91-d38d-30de-8d2e-12729cb02f04,Electricity; at grid; generation mix - Gainesville Regional Utilities
+94704f13-b082-3fbc-b41f-f0e5c7693aef,"Electricity - OIL - Puget Sound Energy, Inc."
+95ad1097-936b-30c0-a1be-cdb7ea66119f,power plant construction - solar_pv_const - Western Area Power Administration - Desert Southwest Region
+961484c1-8673-3f10-a8a1-2862e428c2ab,Electricity - WIND - Public Service Company of New Mexico
+967555ff-0c50-3ecb-bdbe-03e5bc52be1a,"coal extraction and processing - Central Interior, BIT, Underground"
+9679bdee-45fe-3d5d-8d45-f69cdefbc5cc,Electricity; at grid; consumption mix - US - US
+96b9ddb7-87b0-3985-b7a6-69b93a2d4a36,"nuclear fuel extraction, processing, and transport"
+9705519a-acdb-3569-b905-3ca903379852,Electricity - BIOMASS - Bonneville Power Administration
+97575bde-fd36-318e-925e-1f9138f3d57a,Electricity - GAS - Imperial Irrigation District
+9875751f-9184-361c-984a-341c293185c3,"Transport, combination truck; long-haul; electricity powered; South"
+9882285e-5c8d-38b7-abae-7ec29a2fe5eb,power plant construction - solar_pv_const - Louisville Gas and Electric Company and Kentucky Utilities Company
+99b4c4b8-ace6-31e6-87b8-b857c352abbd,Electricity - MIXED - Balancing Authority of Northern California
+99e620ca-b5a3-3341-ab25-78b4353313bd,Electricity - BIOMASS - Hawaiian Electric Co Inc
+9a69a316-1e7f-3aad-bc9a-2981667f1898,Electricity - SOLAR - Idaho Power Company
+9a8a6a5d-7da9-3920-960d-f17dcd6c3d53,"Electricity - SOLAR - Avangrid Renewables, LLC"
+9ae1f231-7d6d-33d1-991d-4ee531ab35e4,"Electricity; at grid; generation mix - Southern Company Services, Inc. - Trans"
+9b088524-e71d-34ed-9496-8cf51a04e178,"Electricity - BIOMASS - Associated Electric Cooperative, Inc."
+9b743fd4-2adf-3544-9cf9-028a39fa0694,Electricity - SOLAR - Public Service Company of New Mexico
+9b963797-6b39-3ed3-8d5b-ea5f19919073,Electricity - MIXED - South Carolina Public Service Authority
+9c4f9cfc-6e15-3ead-b864-cc08d6ca3200,"coal extraction and processing - Northern Appalachia, BIT, Underground"
+9c6dfa39-1e0c-3212-9106-fc5bf346f29c,"Electricity - WIND - Puget Sound Energy, Inc."
+9e22e977-d9aa-3a27-ae75-644c0debb827,Electricity - COAL - Nevada Power Company
+9e378875-6f17-3a9e-9cea-e5a9e2ceeee5,"Electricity - HYDRO - Electric Reliability Council of Texas, Inc."
+9e8e26a1-3cdc-32c2-ad17-9f3a571f0f35,Electricity - SOLAR - Imperial Irrigation District
+9e92167b-f25d-3314-8ddb-2926b3720538,power plant construction - coal_const - Nevada Power Company
+9fed0063-826c-3427-8d1f-a36a0e8a83dd,"Electricity - GAS - Dominion Energy South Carolina, Inc."
+a07b14ba-3cdc-312d-80db-8bf41e6d85d1,Electricity; at grid; generation mix - Tennessee Valley Authority
+a188b143-2896-39f1-8e47-2d57cabb9d3b,"coal extraction and processing - Illinois Basin, BIT, Surface"
+a199a7b6-fe2c-3ce4-b799-fcc3917367be,Electricity - MIXED - PacifiCorp East
+a1a79a48-9c0f-3897-b203-4b11a68d9ea9,Electricity - SOLAR - Tampa Electric Company
+a1cb9520-a63f-30cc-8917-2b60369ac10f,petroleum extraction and processing - DFO PADD 4
+a28f2563-2f63-362e-865b-4871b0e5d615,Electricity - OIL - ISO New England
+a2fa51e8-27ba-30f9-9c74-98eedf5db901,power plant construction - solar_pv_const - California Independent System Operator
+a39d2020-a8ca-3e60-ba5e-8474c1a695c3,"Electricity - HYDRO - PJM Interconnection, LLC"
+a42d423c-d606-326b-b8ad-63237997f546,"Electricity - COAL - Electric Reliability Council of Texas, Inc."
+a437c0c6-7a74-3fca-939f-2deffdd449df,Electricity; at grid; generation mix - Manitoba Hydro
+a49b628c-bb36-3fd8-b1a0-ba4e2d039656,Electricity - GAS - ISO New England
+a54258be-77a4-347c-b96f-6732f436fd64,"Electricity; at grid; generation mix - Public Utility District No. 2 of Grant County, Washington"
+a62ec51d-9659-33e5-a72d-032613a1790e,"Electricity - HYDRO - Dominion Energy South Carolina, Inc."
+a6a98f21-47a2-3e1a-bf98-0e86d59fb79d,Electricity - GAS - Western Area Power Administration - Rocky Mountain Region
+a844eac3-3fe8-37c4-9b1a-5edb3a096918,"Electricity - SOLAR - Puget Sound Energy, Inc."
+a89030c5-0fce-3ecd-a1fb-bb13032b16e3,Electricity - HYDRO - Florida Power & Light Co.
+a8c3df5c-389a-3c9b-bd64-37940c68c148,Electricity - MIXED - Public Service Company of Colorado
+a916db8d-e691-3892-9732-9fb70af71f98,Electricity - WIND - Los Angeles Department of Water and Power
+a9302278-b271-3410-aad3-62ad7dee0208,Electricity - WIND - El Paso Electric Company
+a9324829-4f8a-385f-bc4c-6ed3a26a7594,power plant construction - solar_pv_const - Imperial Irrigation District
+a984406d-a09f-3ef3-a037-e5e08689f21e,Electricity - HYDRO - PacifiCorp West
+a9df61f6-b384-3c03-87aa-0ce24849f782,Electricity - MIXED - Duke Energy Carolinas
+aa01fe31-1b20-32e8-9be7-1f4560116f30,Electricity; at grid; generation mix - City of Tallahassee
+aa0abcc2-0854-3ac9-9396-369f56a41690,power plant construction - solar_pv_const - Tampa Electric Company
+aa8dfe80-7e48-379b-9a39-8ced9be15b69,natural gas extraction and processing - Uinta
+abd465ac-de15-3efb-85ce-e30843d31abf,"Electricity - WIND - Electric Reliability Council of Texas, Inc."
+ac0fe849-759b-32cb-a6a6-5c0df4869a6f,natural gas extraction and processing - Anadarko
+ac1c2891-6fea-3022-90bd-11e9601089a0,Electricity; at grid; generation mix - Arizona Public Service Company
+ac294777-d071-39ef-aea0-2b6c409c9c91,Electricity; at grid; generation mix - British Columbia Hydro and Power Authority
+ad32b6d8-b721-353b-bbda-9a43e572aa79,"Transport, combination truck; electricity powered; Southwest"
+ad46e422-d833-3a31-9491-d6fc013e8f16,Electricity - WIND - Western Area Power Administration - Rocky Mountain Region
+adf4a04b-4db0-3feb-b274-58746149ca6b,Electricity; at grid; generation mix - New York Independent System Operator
+ae929e50-1dc1-3612-a44b-e1a4f0bd33ad,Electricity - OIL - South Carolina Public Service Authority
+af6f2d7d-02d7-3d13-8f1a-06f47afd808d,"Electricity - BIOMASS - Midcontinent Independent System Operator, Inc."
+afe03ba0-925a-3e74-b127-bdfd927cbc46,Electricity - COAL - Tucson Electric Power
+afe0bf20-b41d-3657-85be-0bcd3231f859,Electricity - WIND - Western Area Power Administration - Upper Great Plains West
+b02ee182-7702-3863-ab30-0880a89e9cd4,power plant construction - ngcc_const - Florida Municipal Power Pool
+b0393ee3-4d0b-37ce-a3bf-0ab6bc461027,Electricity - GEOTHERMAL - PacifiCorp East
+b09cf686-5605-33b1-bd2a-c1002bf0fb33,Electricity; at grid; generation mix - Louisville Gas and Electric Company and Kentucky Utilities Company
+b0b00af7-0e43-314f-bafc-cb188652d097,Electricity - BIOMASS - California Independent System Operator
+b0b68081-5a8a-3a69-ae99-1650b268faf6,"Electricity - NUCLEAR - Electric Reliability Council of Texas, Inc."
+b166f9f4-07e9-349e-b7c5-f553446466d5,power plant construction - solar_pv_const - Tennessee Valley Authority
+b25fdc7f-9e80-3849-8904-d3524fbe69bb,petroleum extraction and processing - RFO PADD 3
+b2e8418a-8b48-3b29-b42b-1ceb5a69da00,power plant construction - wind_const - Southwest Power Pool
+b2ff31a2-03d4-3a48-9400-2c59592005dc,"Transport, combination truck; electricity powered; South"
+b34675b0-f8f3-32db-943e-06238462b4f4,"Electricity; at grid; generation mix - Duke Energy Florida, Inc."
+b3959fa4-37bf-3677-b537-743135f822e3,power plant construction - solar_pv_const - Nevada Power Company
+b40a175f-4dea-379f-ba33-b742e9d974f2,power plant construction - solar_pv_const - JEA
+b4fa9f99-a550-36fb-8148-b60f51d3ff54,Electricity - SOLAR - Avista Corporation
+b53e7084-3b28-35b9-9e5e-4e08c6d24f76,Electricity - COAL - PacifiCorp East
+b5450280-e09e-3977-b803-106b2f535fee,power plant construction - ngcc_const - Western Area Power Administration - Desert Southwest Region
+b5c4b502-6335-3082-b740-d8553f8a46d6,power plant construction - solar_pv_const - City of Tallahassee
+b5d75f8c-5bcf-36b4-8663-7c49a4242668,natural gas extraction and processing - Arkla
+b5edf29b-ec8f-3588-ba9e-036143e0689c,power plant construction - solar_pv_const - Los Angeles Department of Water and Power
+b5ffd6d3-9832-3954-9b01-175120af454c,power plant construction - solar_pv_const - US Average
+b675a1b0-eb8e-33e3-b7a0-d0e45d127c63,power plant construction - ngcc_const - Portland General Electric Company
+b72ca9e5-cbd8-3780-9d52-ba80bed532ea,"coal extraction and processing - Northern Appalachia, BIT, Processing"
+b73c607c-b11b-3385-8475-3cf0e4f0b625,Electricity - COAL - Duke Energy Carolinas
+b77a0022-783e-3b3a-93f5-25f3620f695d,power plant construction - ngcc_const - South Carolina Public Service Authority
+b7eaf52c-934d-33e9-a2e4-ed3d4122c075,Electricity - OIL - Duke Energy Progress East
+b834bf0d-2983-3178-9576-07d5a97e1750,power plant construction - solar_thermal_const - California Independent System Operator
+b84bf23b-a65f-3fbb-b8cf-37d3ece77b50,Electricity - WIND - Portland General Electric Company
+b875ad4b-3f4e-3b43-890c-974d41559283,Electricity - GAS - El Paso Electric Company
+ba2984d7-9a30-30e6-a52e-55e1774117c7,Electricity - GEOTHERMAL - Bonneville Power Administration
+ba2f12d7-3266-3f6f-8a25-6fb98f8641b9,"Electricity; at grid; generation mix - Griffith Energy, LLC"
+ba529824-0b0d-3a53-8708-383ac74f33ab,"Electricity - WIND - PJM Interconnection, LLC"
+baf8d039-24f4-3918-ac32-49fb1f15565c,power plant construction - coal_const - Louisville Gas and Electric Company and Kentucky Utilities Company
+bb15406b-b0ec-3b29-9a05-6fcfb8d94767,Electricity - MIXED - ISO New England
+bc7f0c2a-e6df-383a-9475-b5668d2f46e2,"Electricity - WIND - Midcontinent Independent System Operator, Inc."
+bceac90c-b45d-34b6-b21a-d21287bb6d79,Electricity - GAS - Western Area Power Administration - Desert Southwest Region
+bd216727-7625-334b-9956-e2c9aab61caf,power plant construction - coal_const - US Average
+bd2af5c5-093b-35d5-9e83-52dfc864fd64,Electricity - GAS - Tampa Electric Company
+be78e573-3350-373e-8b89-64b8aca3e0dc,Electricity - HYDRO - Western Area Power Administration - Upper Great Plains West
+beeb973a-bd5c-3d0c-85d7-62b625b22341,power plant construction - ngcc_const - JEA
+bfdf8711-4c5c-3eda-a3cf-6e7dea643dbf,power plant construction - coal_const - Duke Energy Progress East
+c001e6d7-96a1-3b15-bc00-3a59a69b10b3,Electricity - GAS - Nevada Power Company
+c02e3d5f-e612-315d-9571-76f0d481e7b5,Electricity - COAL - Southwest Power Pool
+c07c51fc-774e-31cb-8e16-aee17eab1e91,power plant construction - solar_pv_const - Bonneville Power Administration
+c1027216-0ed2-3217-9067-16a08692e093,Electricity - BIOMASS - Louisville Gas and Electric Company and Kentucky Utilities Company
+c1b16e6c-da13-3478-8edb-65899bfdb3a9,"Electricity - OIL - Duke Energy Florida, Inc."
+c29514c6-f5b9-3f3b-9cc9-9cea17dfa61a,Electricity - HYDRO - PacifiCorp East
+c347ee01-7522-333a-b168-9c4c2e0a00b9,"Electricity - NUCLEAR - Midcontinent Independent System Operator, Inc."
+c35cbb50-8302-3777-964f-32873d41370d,natural gas extraction and processing - Fort Worth
+c3b39e0e-e3c0-3acc-b1e3-0616a776945b,Electricity - BIOMASS - New York Independent System Operator
+c4063cd7-8fdb-3c33-ae54-b6178d5cd8e9,Electricity - OIL - PacifiCorp East
+c4792ca4-bd95-398a-aea2-db4ccce8d525,"Electricity - COAL - PJM Interconnection, LLC"
+c491acec-3c5d-30c8-ab4d-f0c216b89dfa,Electricity - GAS - Florida Power & Light Co.
+c68207d8-57cb-3a1e-bbbe-f5a7fdb9152f,Electricity; at grid; generation mix - JEA
+c6e30a30-e62f-362c-b4d1-14474f4d637b,Electricity - SOLAR - Louisville Gas and Electric Company and Kentucky Utilities Company
+c71741b5-5c0f-3dfb-8d15-fe112b0548d7,"power plant construction - ngcc_const - Gridforce Energy Management, LLC"
+c79ed1d0-83f2-39c6-a33b-a8a936163777,"Electricity - MIXED - Puget Sound Energy, Inc."
+c7b017e8-4053-3dfc-9ad7-234f79e31f70,Electricity; at grid; consumption mix - PJM - FERC
+c8b61554-80e2-3f08-9aad-7c30797ad63e,Electricity; at grid; generation mix - Nevada Power Company
+c8b936f7-950c-3369-add2-ba51854997e0,Electricity - HYDRO - NorthWestern Corporation
+c8d9dda0-20f9-331d-8273-3c7dc50a10be,"Electricity - WIND - NaturEner Power Watch, LLC"
+c9cd5835-ce99-303c-91a2-f8935476425c,Electricity - GAS - Southwestern Power Administration
+ca45812c-19a8-3b82-865b-ba7d54249d88,Electricity - COAL - Tennessee Valley Authority
+caeb14d1-a014-3234-90ed-c95751b07e7e,power plant construction - solar_pv_const - Duke Energy Progress East
+cb763bdb-b63c-3666-9147-f64efed12ecc,"coal extraction and processing - Southern Appalachia, BIT, Surface"
+cba5ae73-c5e5-3f97-8601-1090cfbbb432,"coal extraction and processing - Rocky Mountain, BIT, Underground"
+cc79e551-bca8-3a76-b360-936165b6b8da,natural gas extraction and processing - East Texas
+cc914db0-7098-3f53-b447-b3d5bfe0de94,Electricity - SOLAR - Tucson Electric Power
+cc9e519a-2f7d-308f-bf39-9678596dd09b,natural gas extraction and processing - San Juan
+cc9ecd71-c61f-387c-82a7-98d6dcc182e6,Electricity - WIND - Duke Energy Progress East
+ccc1943d-a12d-3b19-bf26-5fb1044bd040,power plant construction - wind_const - Idaho Power Company
+cd51c22c-75c0-39a0-8bb0-dec8a78ef147,power plant construction - coal_const - Public Service Company of Colorado
+cd82de2a-ffdd-35e2-84c5-b2b94bf3c8bf,Electricity - OIL - California Independent System Operator
+cd90d492-fd92-36fe-97cf-d146744ea869,power plant construction - solar_thermal_const - Arizona Public Service Company
+cdcbca23-de58-3d8d-bde8-7a58ed7f4a9c,Electricity - MIXED - Public Service Company of New Mexico
+ce664816-3835-34a1-b500-3a6b0f6e755e,"Electricity - GAS - New Harquahala Generating Company, LLC"
+ce6d8cb8-29b2-33f8-9829-0976959fd017,power plant construction - coal_const - South Carolina Public Service Authority
+cef553ab-6ff5-38cc-9219-e047daf9c8e4,power plant construction - coal_const - California Independent System Operator
+d0469061-7f8d-3a34-953a-8e70184e3e84,power plant construction - coal_const - Western Area Power Administration - Rocky Mountain Region
+d0812154-8555-3172-baf0-383cff771dd6,"power plant construction - solar_pv_const - Electric Reliability Council of Texas, Inc."
+d0a6e069-00d9-3000-aa5e-1373d6299b5f,"power plant construction - ngcc_const - Griffith Energy, LLC"
+d139a707-ad31-327f-8fdc-d453b33efe5d,coal transport - Belt
+d169379c-a035-3192-9e9b-fc7de3918d9c,"Electricity - GAS - Avangrid Renewables, LLC"
+d19d3de6-ab0a-304c-8d67-4198cec7d3b3,Electricity - OTHF - Western Area Power Administration - Rocky Mountain Region
+d1e9d7b8-db52-3ab8-b562-d6a208556f2c,power plant construction - ngcc_const - New York Independent System Operator
+d1ff373b-1cb7-3a73-9ba5-250fcbba3515,Electricity - HYDRO - PUD No. 1 of Douglas County
+d228f12a-f920-3d5c-b057-73c19a8da313,Electricity - BIOMASS - Public Service Company of New Mexico
+d37e46d0-b807-33fe-a6cd-3620189911f8,Electricity - WIND - Western Area Power Administration - Desert Southwest Region
+d37ef7f5-72ac-3e1f-bf89-1cc8898113d1,"Electricity - GAS - Arlington Valley, LLC"
+d410aa85-fe88-3372-a992-abe1dfa2aafb,Electricity; at grid; generation mix - Bonneville Power Administration
+d43ae72a-8ef2-3362-a0b8-9f27df0f9391,"power plant construction - coal_const - Southern Company Services, Inc. - Trans"
+d54618e5-278c-3bb1-9026-84860adf3111,Electricity; at grid; generation mix - Seattle City Light
+d57fa334-99a3-32bb-8540-b815f2cb2c93,power plant construction - ngcc_const - Idaho Power Company
+d5824b8e-22c0-3fa4-843f-c9f3032b13a0,"Electricity - MIXED - Dominion Energy South Carolina, Inc."
+d61d4275-ba68-3fdd-b4df-08da25e281a9,"coal extraction and processing - Central Appalachia, BIT, Surface"
+d69b54b0-2add-3c40-9ae5-f3392550fb4f,"Electricity - HYDRO - Alcoa Power Generating, Inc. - Yadkin Division"
+d7159c93-0cea-3c91-872c-ce3f38dfaf82,Electricity - BIOMASS - South Carolina Public Service Authority
+d747963a-c650-3a49-8b40-d6a769eb2798,power plant construction - coal_const - Tampa Electric Company
+d77237c8-2b23-3236-9fd0-935c952cef32,Electricity - NUCLEAR - ISO New England
+d90bfc7a-8777-3a29-99c2-557a8c053263,power plant construction - ngcc_const - Louisville Gas and Electric Company and Kentucky Utilities Company
+d934ed56-026e-3498-8fc0-08e010d314fc,natural gas extraction and processing - Arkoma
+d9f0438f-8af0-3756-8b93-0c7136a4fe4a,Electricity - BIOMASS - Western Area Power Administration - Rocky Mountain Region
+d9fb0399-cc8d-30e5-a5e5-27cdcda82a8e,Electricity - GAS - Tennessee Valley Authority
+da57c868-470e-37f5-9584-96eb76a7b54a,Electricity; at grid; generation mix - Seminole Electric Cooperative
+da82ba19-2cf4-329f-8103-c0c561aef30b,power plant construction - coal_const - New York Independent System Operator
+dbe82b32-2144-3370-92b2-1fbc4d183b68,Electricity - BIOMASS - PacifiCorp West
+dc1e14d9-fae7-3349-b7b2-493073a5ffb5,Electricity; at grid; generation mix - California Independent System Operator
+dc3bf457-f281-3acf-a55c-9f4144ab207b,Electricity - SOLARTHERMAL - Arizona Public Service Company
+dc44abac-4d0a-3ecc-a95b-193b9d938e71,"Electricity - MIXED - Duke Energy Florida, Inc."
+dc6c3b6e-4706-3dfe-9e7a-d1ef6d4761fc,power plant construction - ngcc_const - Duke Energy Carolinas
+dc6feb45-39d4-3d29-b38a-9911d1e7b3a8,Electricity; at grid; generation mix - PacifiCorp West
+dd6fa0f2-7a9e-3460-8273-3c9658b53df8,natural gas extraction and processing - Strawn
+dd928ac6-d040-3bb1-a90b-1c7a71a6ee17,petroleum extraction and processing - DFO PADD 2
+de0c20b9-465c-336a-a130-182cc687da87,Electricity - HYDRO - Southwestern Power Administration
+de45f351-e83f-3166-a3b8-a69ec43701e9,power plant construction - solar_pv_const - Public Service Company of Colorado
+de83041c-ecd0-35bf-b203-fe1a924e886b,power plant construction - coal_const - JEA
+df235ed5-5ac2-35f7-97b0-548a570941a2,power plant construction - solar_thermal_const - Nevada Power Company
+dfc791b4-4f3e-3b3f-9ee4-eb31a279a576,Electricity - OIL - Southwest Power Pool
+e0a163f3-c694-3870-876f-144c988f2b74,Electricity - SOLAR - Western Area Power Administration - Desert Southwest Region
+e1230b6b-6195-3a7e-88d0-651a4ae188e6,power plant construction - ngcc_const - Western Area Power Administration - Rocky Mountain Region
+e1af8650-b9cc-367d-9cac-75a8d52eb3fb,Electricity - ALL - British Columbia Hydro and Power Authority
+e1fccfd9-17b9-3ccf-a2c1-b7e8e5586cae,"coal extraction and processing - Illinois Basin, BIT, Processing"
+e20b57bf-55ce-3524-ac86-2df70f8b0ca4,power plant construction - solar_pv_const - Southwest Power Pool
+e2f66950-9bfb-4413-8ec7-7eb99afc268c,Extrusion; at plant
+e3284a39-e499-35dc-b27c-81a78eecdcc8,"power plant construction - ngcc_const - PJM Interconnection, LLC"
+e36d057a-f7f3-37c4-85b6-75790b7f42d1,power plant construction - ngcc_const - City of Tallahassee
+e381e81f-5e72-37e4-b4f4-d1e29d374ece,Electricity - WIND - Public Service Company of Colorado
+e387c930-fac5-3647-ad7a-bdd00f10867c,Electricity; at grid; generation mix - ISO New England
+e3b6df79-adf8-3632-b8fb-2f72da650907,natural gas extraction and processing - Appalachian
+e3cdaa12-5bd9-3bca-bef2-07e300589948,natural gas extraction and processing - Piceance
+e3eecaa9-adc4-3ce4-bd8e-23cefd823371,Electricity - SOLAR - PacifiCorp West
+e4dea713-67c7-3eb9-9e30-b8b65748399a,natural gas extraction and processing - Gulf
+e4eea573-dc1d-3b55-a7e2-5d78b6c86505,"Electricity; at grid; generation mix - City of Tacoma, Department of Public Utilities, Light Division"
+e5f3305c-047d-33d2-8b1f-6e2242fa1ee5,power plant construction - wind_const - Western Area Power Administration - Rocky Mountain Region
+e5f7ce5b-b057-3b20-b8c9-8d11018d4a30,power plant construction - coal_const - Tennessee Valley Authority
+e611a465-bb3a-3e71-895e-ef8e32084219,Electricity; at grid; generation mix - Western Area Power Administration - Desert Southwest Region
+e626201c-f4d8-3e10-a7a6-b21b8c7e1eb2,Electricity - WIND - PacifiCorp West
+e6feb547-be56-39d8-a96f-c851436431c3,power plant construction - wind_const - Tennessee Valley Authority
+e76ff5c2-dfd4-358d-8fc7-3ec8e767fd27,Electricity - BIOMASS - El Paso Electric Company
+e7af980b-816e-3150-b9e6-f970b9de0e7e,Electricity - WIND - Southwest Power Pool
+e80db889-85b6-3c9e-ae23-f920d786ef15,Electricity - GAS - Florida Municipal Power Pool
+e8a5c206-277a-37c1-ab90-38122395f827,"Electricity - BIOMASS - Puget Sound Energy, Inc."
+e9172e46-86c9-32db-9b49-01a97547591f,Electricity; at grid; generation mix - New Brunswick System Operator
+e9afae47-9a45-328f-aa79-66681c5ccdcc,power plant construction - solar_pv_const - Southeastern Power Administration
+eb1dd8f2-3cdd-322f-920a-7064f0ce5eef,power plant construction - ngcc_const - Duke Energy Progress East
+eb30487a-c1e7-3a70-b346-9cb606868d17,Electricity - COAL - Seminole Electric Cooperative
+ec7ac44a-ad04-3080-8537-7b375a230338,Electricity - MIXED - Western Area Power Administration - Rocky Mountain Region
+ed00bb08-11c4-36a4-8504-49762d909b14,Electricity - HYDRO - Louisville Gas and Electric Company and Kentucky Utilities Company
+ed12e1c3-7374-3868-af67-d9bc605fb1ab,power plant construction - wind_const - Avista Corporation
+eda53320-2948-330d-9da5-3d26041d4803,Electricity - SOLAR - Southeastern Power Administration
+ee42bc0b-d01b-35a6-a0b0-fced12206eab,Electricity; at user; consumption mix - PJM - FERC
+ee7e0537-0e3c-3b8a-a155-9d969ec2f74e,Electricity; at user; consumption mix - ERCOT - FERC
+ee8ec87f-eadf-3ac0-a708-aef3f98c939d,"Electricity - SOLAR - Associated Electric Cooperative, Inc."
+eef678db-f4f6-349d-98c1-81dfc5063997,"Electricity - GAS - Midcontinent Independent System Operator, Inc."
+eefd8eb1-d62f-38f6-b237-e32ea3f99b11,power plant construction - solar_pv_const - Idaho Power Company
+ef0644c5-76d9-327d-b0f8-fcd33e1d3ec3,power plant construction - coal_const - Seminole Electric Cooperative
+efc60387-7aa4-3c77-9fee-f8bece7a2d0a,power plant construction - solar_pv_const - Balancing Authority of Northern California
+efd4b5a5-0800-35ab-9552-2073378798a4,"Electricity - WIND - Associated Electric Cooperative, Inc."
+efe1206d-8a19-3d65-a189-66f97304677a,"coal extraction and processing - West/Northwest, SUB, Underground"
+f02fe212-3d32-3635-a490-b5c21a5f2714,Electricity - COAL - Bonneville Power Administration
+f140f792-6263-3364-a829-caac8a04694d,Electricity - MIXED - Nevada Power Company
+f1606ae1-4952-3eb2-83cd-5ad1d5233f15,power plant construction - wind_const - US Average
+f24f1d86-7257-3a25-89c9-2d35973f0880,power plant construction - ngcc_const - Arizona Public Service Company
+f256d3d0-7229-34c2-b749-313cf93f6bc2,Electricity - BIOMASS - ISO New England
+f2810f07-91dc-3d23-91cc-5f225733f2c6,"Electricity - GAS - Southern Company Services, Inc. - Trans"
+f34369c5-a087-3df8-aea9-ce59f90e07d6,"Electricity - SOLAR - Electric Reliability Council of Texas, Inc."
+f3c60892-6829-3f08-9621-07e417316a17,Electricity - HYDRO - Salt River Project Agricultural Improvement and Power District
+f4c0141d-7362-39be-b5ce-30c63c68fe88,Electricity - MIXED - Duke Energy Progress East
+f557ef89-6b90-3c1f-9b4c-af182a47866c,Electricity - SOLAR - Florida Municipal Power Pool
+f5b8a4f1-ed58-30ff-9a2a-4d98d6394200,Electricity - GEOTHERMAL - California Independent System Operator
+f61b7ac1-ff32-3aa5-bb07-2130c1d166e3,Electricity - MIXED - Avista Corporation
+f62f3283-360e-3374-97a7-413515960255,power plant construction - wind_const - Public Service Company of New Mexico
+f63887cc-8499-3339-aa53-4bdea0930f55,Electricity - GAS - Louisville Gas and Electric Company and Kentucky Utilities Company
+f662f4d7-9b65-3682-98a9-bc7b1ff88b7f,Electricity - NUCLEAR - New York Independent System Operator
+f7d850f2-c3b3-34c5-99fa-60a33dcc3e25,Electricity - SOLAR - South Carolina Public Service Authority
+f7e1b7f9-f2f6-345d-84d0-b2a7e361b44b,Electricity - BIOMASS - Duke Energy Progress East
+f85d9e2f-f037-3149-90a0-1571cf4b579a,power plant construction - ngcc_const - Southwest Power Pool
+f8be14b9-116e-36ea-a4b9-070cf44e87ac,natural gas extraction and processing - Green River
+f9727f7b-03a5-3c3c-8b1a-80540ca6f36e,"power plant construction - wind_const - PJM Interconnection, LLC"
+faa6de27-3440-399a-b88c-1d9789120283,"coal extraction and processing - Import, BIT, Surface"
+fd0dc9c9-99ee-33ef-8fff-4cc73321eed5,Electricity - NUCLEAR - Duke Energy Carolinas
+fd3ebd28-bb50-3c52-9f67-82c4888e056e,Electricity - BIOMASS - JEA
+fd7e10b3-0be0-3dbf-a09d-09d6691bb8eb,Electricity - BIOMASS - Idaho Power Company
+fe30de51-3171-3ace-bdfc-63e8adf1510d,"Electricity - GAS - Duke Energy Florida, Inc."
+fed50f14-ed07-3c0b-8014-7ebd9739d0c2,power plant construction - coal_const - Arizona Public Service Company

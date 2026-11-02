@@ -1,0 +1,15 @@
+.Rproj.user
+.Rhistory
+.RData
+.Ruserdata
+*.Rproj
+.Renviron
+.DS_Store
+..Rcheck/
+*.Rcheck/
+lcamate_*.tar.gz
+inst/doc
+doc
+Meta
+vignettes/*.html
+vignettes/*.R

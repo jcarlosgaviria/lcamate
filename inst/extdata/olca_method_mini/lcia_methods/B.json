@@ -1,0 +1,11 @@
+{
+ "@type": "ImpactMethod",
+ "@id": "22222222-0000-4000-8000-00000000000b",
+ "name": "Invented test method B",
+ "impactCategories": [
+  {
+   "@id": "11111111-0000-4000-8000-000000000001",
+   "name": "Test climate (invented)"
+  }
+ ]
+}

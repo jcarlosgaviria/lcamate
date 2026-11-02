@@ -1,0 +1,165 @@
+---
+title: "`r params$data$title`"
+author: "`r if (is.null(params$data$author)) '' else params$data$author`"
+date: "`r params$data$date`"
+params:
+  data: NULL
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE, message = FALSE, warning = FALSE,
+                      fig.width = 7, fig.height = 3.8)
+d <- params$data
+tab <- function(x, ...) knitr::kable(x, ...)
+sig <- function(x) signif(x, 4)
+```
+
+## 1. Goal and scope
+
+```{r goal, results='asis'}
+if (is.null(d$goal)) cat("*Goal of the study: to be written by the analyst (intended application, reasons for the study, intended audience).*\n") else cat(d$goal, "\n")
+```
+
+**Functional unit / demand:** `r d$functional_unit`.
+
+**Impact methods:** `r paste(d$scores$method, collapse = ", ")`.
+
+## 2. Inventory
+
+```{r inv}
+inv <- data.frame(
+  item = c("Processes", "Elementary flows", "Technosphere links", "Exchanges"),
+  count = c(d$model$n_processes, d$model$n_flows, d$model$n_links, d$model$n_exchanges))
+tab(inv)
+```
+
+```{r compl, results='asis'}
+cp <- d$model$completeness
+if (!is.null(cp)) cat(sprintf("\nLink completeness per process (share of technosphere inputs linked inside the database): median %.2f; %d of %d processes have no linked inputs.\n",
+                              median(cp, na.rm = TRUE), sum(cp == 0, na.rm = TRUE), length(cp)))
+```
+
+## 3. Results
+
+```{r scores}
+sc <- d$scores; sc$score <- sig(sc$score)
+tab(sc, col.names = c("Method", "Score (deterministic)"))
+```
+
+### Process contributions
+
+```{r contrib, results='asis', fig.height=3.6}
+for (mm in names(d$contrib)) {
+  cat("\n\n**", mm, "**\n\n", sep = "")
+  ct <- d$contrib[[mm]]; ct$contribution <- sig(ct$contribution); ct$share <- round(100 * ct$share, 1)
+  print(tab(ct, col.names = c("Process", "Contribution", "Share (%)")))
+  if (!is.null(d$plots$contrib[[mm]])) { cat("\n\n"); print(d$plots$contrib[[mm]]) }
+}
+```
+
+## 4. Uncertainty
+
+```{r nomc, results='asis'}
+if (!d$mc$available) cat("The data contain no uncertainty distributions, so no Monte Carlo simulation was run. Only the deterministic scores above are reported; this is *not* evidence of low uncertainty.\n")
+```
+
+```{r mcintro, results='asis'}
+if (d$mc$available) cat("Monte Carlo with ", d$mc$n, " iterations (seed ", format(d$mc$seed), "). Inputs are sampled independently ", if (d$mc$scenario) "from the documented distributions and from pedigree-derived distributions that were assumed as a scenario (see Section 5)." else "from the distributions documented in the data.", "\n", sep = "")
+```
+
+```{r mc, eval=d$mc$available}
+s <- d$mc$summary
+s[] <- lapply(s, function(v) if (is.numeric(v)) sig(v) else v)
+tab(s)
+```
+
+```{r mcplot, eval=d$mc$available}
+if (!is.null(d$plots$mc)) print(d$plots$mc)
+```
+
+```{r errtext, results='asis', eval=d$mc$available}
+cat(sprintf("\n**Monte Carlo error and iterations needed** for a relative error of %g%% in the mean:\n", 100 * d$mc$target_rel))
+```
+
+```{r err, eval=d$mc$available}
+e <- d$mc$error; e$rel_se <- sig(e$rel_se)
+tab(e, col.names = c("Method", "Iterations run", "Relative SE of the mean", "Iterations needed"))
+```
+
+```{r sens, results='asis', eval=d$mc$available}
+if (!is.null(d$mc$sens)) {
+  cat("\n**Screening of the inputs that drive the result** (Spearman rank correlation, first method; not a variance decomposition):\n\n")
+  sn <- d$mc$sens; sn$rho <- sig(sn$rho); print(tab(sn))
+}
+```
+
+## 5. Data quality: uncertainty coverage
+
+```{r cov}
+cv <- d$mc$coverage
+if (!is.null(cv)) {
+  cv[] <- lapply(cv, function(v) if (is.numeric(v)) sig(v) else v)
+  tab(cv)
+}
+```
+
+`share_bio_contribution` is the share of the elementary-flow contributions that comes from exchanges with a varying uncertainty distribution. When it is low, narrow intervals mean *lack of information*, not low uncertainty. `share_bio_scenario` (only present with a pedigree scenario) is the additional share that varies only because of an assumed, pedigree-derived distribution; it is not documented uncertainty.
+
+```{r warn, results='asis'}
+if (length(d$warnings)) {
+  cat("\n**Warnings raised during the analysis:**\n\n")
+  cat(paste0("* ", d$warnings, collapse = "\n"), "\n")
+}
+```
+
+```{r compare, results='asis'}
+if (!is.null(d$compare)) {
+  cat("\n## 6. Comparison of two alternatives\n\n")
+  cat(sprintf("%s Monte Carlo (%d iterations). Reported as effect sizes and probabilities, not p-values.\n\n",
+              if (d$compare$paired) "Paired" else "Unpaired", d$compare$n))
+  cs <- d$compare$summary; cs[] <- lapply(cs, function(v) if (is.numeric(v)) sig(v) else v)
+  print(tab(cs))
+  if (!is.null(d$plots$compare)) { cat("\n\n"); print(d$plots$compare) }
+}
+```
+
+```{r doe, results='asis'}
+if (!is.null(d$doe)) {
+  cat("\n## 7. Design of experiments\n\n")
+  if (d$doe$mode == "model")
+    cat("Model mode: effects over the Monte Carlo uncertainty of the inputs; no p-values are reported.\n\n")
+  else
+    cat("Experimental mode: effects estimated from replicated runs; p-values refer to those replicates.\n\n")
+  ef <- d$doe$table; ef[] <- lapply(ef, function(v) if (is.numeric(v)) sig(v) else v)
+  print(tab(ef))
+  if (!is.null(d$plots$effects)) { cat("\n\n"); print(d$plots$effects) }
+}
+```
+
+## 8. What is computed and what is assumed
+
+**Computed from the data**
+
+```{r measured, results='asis'}
+cat(paste0("* ", d$measured, collapse = "\n"), "\n")
+```
+
+**Assumed by the analyst**
+
+```{r assumed, results='asis'}
+if (is.null(d$assumed)) cat("*No assumptions were declared. List here the choices that are not in the data (system boundary, allocation, cut-offs, scenario parameters).*\n") else cat(paste0("* ", d$assumed, collapse = "\n"), "\n")
+```
+
+## 9. Limitations
+
+```{r lim, results='asis'}
+cat(paste0("* ", d$limitations, collapse = "\n"), "\n")
+```
+
+## 10. Reproducibility
+
+`lcamate` version `r d$versions$lcamate`; `r d$versions$R`; seed `r d$mc$seed`.
+
+```{r session}
+cat(d$session, sep = "\n")
+```

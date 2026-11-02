@@ -1,0 +1,50 @@
+method,flow,cf
+GWP100,Carbon dioxide | Elementary flows/emission/air | out,1
+GWP100,Nitrous oxide | Elementary flows/emission/air | out,265
+GWP100,Methane | Elementary flows/emission/air | out,28
+GWP100,CFC-114 | Elementary flows/emission/air | out,8590
+GWP100,HFC-134a | Elementary flows/emission/air | out,1300
+GWP100,Carbon tetrafluoride | Elementary flows/emission/air | out,6630
+GWP100,HCFC-22 | Elementary flows/emission/air | out,1760
+GWP100,Carbon tetrachloride | Elementary flows/emission/air | out,1730
+GWP100,Carbon dioxide | Elementary flows/resource/air | in,-1
+GWP100,CFC-113 | Elementary flows/emission/air | out,5820
+GWP100,CFC-12 | Elementary flows/emission/air | out,10200
+GWP100,HFC-23 | Elementary flows/emission/air | out,12400
+GWP100,HFC-152a | Elementary flows/emission/air | out,138
+GWP100,CFC-11 | Elementary flows/emission/air | out,4660
+GWP100,Sulfur hexafluoride | Elementary flows/emission/air | out,23500
+GWP100,Methane | Elementary flows/emission/air/troposphere/rural | out,28
+GWP100,Carbon dioxide | Elementary flows/emission/air/troposphere/rural | out,1
+GWP100,Nitrous oxide | Elementary flows/emission/air/troposphere/rural | out,265
+GWP100,HFC-23 | Elementary flows/emission/air/troposphere/urban | out,12400
+GWP100,HCFC-22 | Elementary flows/emission/air/troposphere/rural | out,1760
+GWP100,CFC-12 | Elementary flows/emission/air/troposphere/rural | out,10200
+GWP100,CFC-11 | Elementary flows/emission/air/troposphere/urban | out,4660
+GWP100,CFC-114 | Elementary flows/emission/air/troposphere/rural | out,8590
+GWP100,CFC-113 | Elementary flows/emission/air/troposphere/rural | out,5820
+GWP100,Carbon dioxide | Elementary flows/emission/air/troposphere/very high | out,1
+GWP100,Nitrous oxide | Elementary flows/emission/air/troposphere/urban | out,265
+GWP100,CFC-113 | Elementary flows/emission/air/troposphere/urban | out,5820
+GWP100,Carbon dioxide | Elementary flows/emission/air/troposphere/urban | out,1
+GWP100,Sulfur hexafluoride | Elementary flows/emission/air/troposphere/urban | out,23500
+GWP100,Nitrous oxide | Elementary flows/emission/air/troposphere/very high | out,265
+GWP100,HCFC-22 | Elementary flows/emission/air/troposphere/urban | out,1760
+GWP100,HFC-134a | Elementary flows/emission/air/troposphere/rural | out,1300
+GWP100,Methane | Elementary flows/emission/air/troposphere/urban | out,28
+GWP100,Carbon tetrachloride | Elementary flows/emission/air/troposphere/urban | out,1730
+GWP100,CFC-12 | Elementary flows/emission/air/troposphere/urban | out,10200
+GWP100,Methane | Elementary flows/emission/air/troposphere/very high | out,28
+GWP100,HFC-152a | Elementary flows/emission/air/troposphere/rural | out,138
+GWP100,HFC-134a | Elementary flows/emission/air/troposphere/urban | out,1300
+GWP100,Carbon tetrafluoride | Elementary flows/emission/air/troposphere/urban | out,6630
+GWP100,HFC-152a | Elementary flows/emission/air/troposphere/urban | out,138
+GWP100,Sulfur hexafluoride | Elementary flows/emission/air/troposphere/rural | out,23500
+GWP100,Carbon dioxide | Elementary flows/resource/air/troposphere | in,-1
+GWP100,Carbon dioxide | Elementary flows/emission/air/stratosphere | out,1
+GWP100,Methane | Elementary flows/emission/air/stratosphere | out,28
+GWP100,Nitrous oxide | Elementary flows/emission/air/stratosphere | out,265
+GWP100,Methane | Elementary flows/emission/air/troposphere/high | out,28
+GWP100,Carbon dioxide | Elementary flows/emission/air/troposphere/high | out,1
+GWP100,HCFC-22 | Elementary flows/emission/air/indoor | out,1760
+GWP100,Carbon dioxide | Elementary flows/emission/air | in,-1

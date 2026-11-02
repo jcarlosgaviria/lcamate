@@ -1,0 +1,19 @@
+{
+ "@type": "ImpactMethod",
+ "@id": "22222222-0000-4000-8000-00000000000a",
+ "name": "Invented test method A",
+ "impactCategories": [
+  {
+   "@id": "11111111-0000-4000-8000-000000000001",
+   "name": "Test climate (invented)"
+  },
+  {
+   "@id": "11111111-0000-4000-8000-000000000002",
+   "name": "Test toxicity (invented)"
+  },
+  {
+   "@id": "11111111-0000-4000-8000-000000000003",
+   "name": "Test no match (invented)"
+  }
+ ]
+}

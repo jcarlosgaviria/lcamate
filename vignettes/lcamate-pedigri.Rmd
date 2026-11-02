@@ -1,0 +1,228 @@
+---
+title: "Matriz de pedigrí en lcamate: calidad de datos y escenarios de incertidumbre"
+author: "Juan C. Gaviria-Chaverra"
+date: "`r Sys.Date()`"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{Matriz de pedigrí en lcamate: calidad de datos y escenarios de incertidumbre}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r setup, include = FALSE}
+knitr::opts_chunk$set(collapse = TRUE, comment = "#>", fig.width = 7, fig.height = 3.8,
+                      dev = "png", dpi = 96)
+library(lcamate)
+ext <- function(...) system.file("extdata", ..., package = "lcamate")
+```
+
+## 1. Qué es el pedigrí y qué no es
+
+La matriz de pedigrí (Weidema y Wesnaes, 1996) describe la calidad de un dato
+del inventario con cinco indicadores, cada uno con un puntaje de 1 (mejor) a 5
+(peor): **fiabilidad**, **completitud**, y correlación **temporal**,
+**geográfica** y **tecnológica** con el sistema que se estudia.
+
+En `lcamate` el pedigrí se usa para dos cosas, y solo para ellas:
+
+1. **Comunicar la calidad de los datos**: ¿qué parte del resultado descansa en
+   datos de baja calidad?
+2. **Construir un escenario explícito de incertidumbre** cuando los datos no
+   traen distribuciones propias.
+
+No se usa para decidir si una diferencia entre alternativas es "significativa".
+Los intervalos que salen de un escenario de pedigrí reflejan **supuestos**, no
+datos del sistema, y como muestra Heijungs (2020), correr más iteraciones de
+Monte Carlo solo hace que una prueba de hipótesis rechace con más facilidad,
+sin que eso aporte información nueva. Por eso `lcamate` no calcula valores p sobre
+valores simulados.
+
+Otra regla del paquete: **los puntajes los asigna la persona que analiza**.
+`lcamate` nunca los inventa; los intercambios sin puntajes se cuentan como tales.
+
+## 2. Un modelo sin incertidumbre documentada
+
+Partimos del modelo de juguete del paquete, sin las columnas de incertidumbre,
+para imitar el caso frecuente en que los datos son solo valores nominales.
+
+```{r modelo}
+ex <- read.csv(ext("toy_exchanges.csv"))[, c("type", "input", "output", "amount")]
+cf <- read.csv(ext("toy_cf.csv"))
+m  <- lca_model(ex, cf)
+m
+```
+
+Como no hay distribuciones, un Monte Carlo no es posible (`lca_mc()` da un error porque
+el modelo no tiene columnas de incertidumbre), y el informe de cobertura marca
+cero:
+
+```{r cobertura0}
+lca_uncertainty_coverage(m, c(product = 1), "GWP100")
+```
+
+Un resultado determinista sin intervalo **no** significa que no haya
+incertidumbre; significa que no hay información para describirla.
+
+## 3. Asignar puntajes
+
+Los puntajes se entregan en una tabla. La columna `output` es el proceso; si se
+incluye `input`, el puntaje se aplica solo a ese intercambio, y si se deja en
+`NA` se aplica a todos los intercambios del proceso. Las filas específicas
+sustituyen a las generales.
+
+```{r puntajes}
+puntajes <- data.frame(
+  output        = c("steel", "gas",  "steel"),
+  input         = c(NA,      NA,     "CO2"),
+  reliability   = c(2,       3,      4),
+  completeness  = c(1,       3,      1),
+  temporal      = c(2,       2,      2),
+  geographical  = c(1,       3,      1),
+  technological = c(3,       2,      3))
+ped <- lca_pedigree(m, puntajes)
+ped
+```
+
+Aquí solo se calificaron dos procesos. Los demás intercambios quedan sin
+puntajes y así se informan; el paquete no los completa por su cuenta.
+
+## 4. Resumen de calidad de los datos
+
+```{r resumen}
+lca_pedigree_summary(m, ped, c(product = 1), "GWP100")
+```
+
+Cómo leer la tabla (la base de las proporciones es la contribución absoluta de
+los flujos elementales, la misma que usa el indicador de cobertura):
+
+* `share_exchanges_scored`: parte de los intercambios elementales con puntaje;
+* `share_contribution_scored`: parte del resultado que descansa en datos con
+  puntaje;
+* `mean_score`: puntaje medio ponderado por contribución;
+* `share_contribution_poor`: parte del resultado con puntaje 4 o 5.
+
+La fila `any_indicator` usa los cinco puntajes a la vez. Esta tabla comunica
+calidad; **no** mide incertidumbre.
+
+## 5. El escenario de incertidumbre
+
+`lca_pedigree_scenario()` convierte los puntajes en distribuciones lognormales
+con la mediana en el valor nominal. Para un intercambio con factores $U_i$, la
+desviación estándar geométrica cumple (ecoinvent; Frischknecht et al., 2007)
+
+$$\mathrm{GSD}^2 = \exp\sqrt{(\ln U_b)^2 + \sum_{i=1}^{5} (\ln U_i)^2}$$
+
+donde $U_b$ es el factor de incertidumbre básica. Los factores por defecto
+(ecoinvent; Weidema et al., 2013) son:
+
+| Puntaje | Fiabilidad | Completitud | Temporal | Geográfica | Tecnológica |
+|:-------:|:----------:|:-----------:|:--------:|:----------:|:-----------:|
+| 1 | 1,00 | 1,00 | 1,00 | 1,00 | 1,00 |
+| 2 | 1,05 | 1,02 | 1,03 | 1,01 | 1,05 |
+| 3 | 1,10 | 1,05 | 1,10 | 1,02 | 1,20 |
+| 4 | 1,20 | 1,10 | 1,20 | 1,05 | 1,50 |
+| 5 | 1,50 | 1,20 | 1,50 | 1,10 | 2,00 |
+
+Dos casillas (geográfica 4 y tecnológica 2) se reconstruyeron a partir de las
+varianzas publicadas y deben contrastarse con la tabla original antes de citar
+estos factores en un artículo. Se pueden reemplazar con el argumento `factors`.
+El valor por defecto de $U_b$ es 1,05, un marcador de posición: no es el factor
+básico específico por flujo de ecoinvent, que `lcamate` no reproduce. Se puede
+cambiar con `basic`.
+
+```{r escenario}
+esc <- lca_pedigree_scenario(m, ped)
+esc
+esc$scenario[c("n_applied", "n_not_scored", "n_nonpositive", "n_kept_documented")]
+```
+
+El modelo queda **etiquetado** como escenario, y sus intercambios marcados. La
+cobertura separa lo documentado de lo supuesto:
+
+```{r cobertura1}
+lca_uncertainty_coverage(esc, c(product = 1), "GWP100")
+```
+
+`share_bio_contribution` es la parte con incertidumbre **documentada** (aquí
+cero) y `share_bio_scenario` la parte que varía solo por el supuesto del
+pedigrí. El aviso de baja cobertura se sigue basando en la primera.
+
+```{r mc-escenario}
+x <- lca_mc(esc, c(product = 1), "GWP100", n = 500, seed = 1)
+lca_mc_summary(x)
+```
+
+El intervalo resultante responde a la pregunta "¿cuánto podría variar el
+resultado **si** los datos calificados tuvieran la incertidumbre genérica que
+indica el pedigrí?", no a "¿cuánta incertidumbre tiene este sistema?". El aviso
+y la columna `unc_scenario` lo dejan escrito en el resultado.
+
+## 6. Caso con USLCI
+
+El conjunto `uslci_unc` del paquete trae procesos de USLCI con distribuciones
+reales en algunos intercambios. Con un método ilustrativo (masa total de flujos
+elementales), calificamos un proceso con puntajes medios:
+
+```{r uslci}
+mu <- read_uslci(ext("uslci_unc"))
+mu$C <- list(emitted_mass = setNames(rep(1, length(mu$flows)), mu$flows))
+p  <- mu$processes[grepl("^Potassium sulphate", mu$info$name)]
+pu <- lca_pedigree(mu, data.frame(output = p, reliability = 3, completeness = 2,
+                                  temporal = 3, geographical = 3, technological = 2))
+pu
+lca_pedigree_summary(mu, pu, setNames(1, p), "emitted_mass")
+```
+
+```{r uslci-esc}
+mue <- lca_pedigree_scenario(mu, pu)
+mue$scenario[c("n_applied", "n_kept_documented", "n_nonpositive")]
+lca_uncertainty_coverage(mue, setNames(1, p), "emitted_mass")
+```
+
+Los intercambios con distribución documentada se conservan (`n_kept_documented`);
+el escenario solo añade variación donde los datos no la traían. Con
+`overwrite = TRUE` el escenario reemplazaría también las distribuciones
+documentadas, algo que solo conviene para comparar a propósito ambos enfoques.
+
+```{r uslci-mc}
+xd <- suppressWarnings(lca_mc(mu,  setNames(1, p), "emitted_mass", n = 500, seed = 1))
+xe <- suppressWarnings(lca_mc(mue, setNames(1, p), "emitted_mass", n = 500, seed = 1))
+rbind(documentado = lca_mc_summary(xd)[c("mean", "sd", "cv", "q2.5", "q97.5")],
+      con_escenario = lca_mc_summary(xe)[c("mean", "sd", "cv", "q2.5", "q97.5")])
+```
+
+## 7. Ejercicios para la clase
+
+1. Cambie los puntajes de la sección 3 a 1 en todos los indicadores. ¿Qué
+   desviación estándar geométrica resulta? (Solo queda la incertidumbre básica.)
+2. Califique todos los procesos con 5. ¿Cuánto crece el coeficiente de
+   variación del resultado? ¿Qué proceso domina `lca_sens()`?
+3. Use `basic = 1.2` y compare. ¿Qué parte del cambio viene de $U_b$ y cuál de
+   los puntajes?
+4. Compare con `lca_compare()` dos alternativas, una con el escenario y otra sin
+   él. ¿Por qué la comparación pareada sigue siendo más informativa que la no
+   pareada? ¿Por qué ninguna de las dos debería usarse para un valor p?
+
+## 8. Limitaciones
+
+* Los puntajes son juicios de quien analiza; dos personas pueden calificar
+  distinto el mismo dato. Conviene documentar el criterio.
+* La tabla de factores es genérica, calibrada para ecoinvent; no se ha validado
+  aquí para otras bases de datos.
+* La incertidumbre básica $U_b$ es un valor único por tipo de intercambio, no el
+  valor específico por flujo.
+* Solo se aplican distribuciones lognormales a cantidades positivas; los
+  intercambios con cantidad no positiva quedan fijos y se cuentan.
+* Los intercambios se muestrean de forma independiente: no se modelan
+  correlaciones.
+
+## Referencias
+
+* Weidema BP, Wesnaes MS (1996). Data quality management for life cycle
+  inventories. *Journal of Cleaner Production* 4:167-174.
+* Frischknecht R et al. (2007). *Overview and methodology.* ecoinvent report
+  No. 1.
+* Weidema BP et al. (2013). *Overview and methodology: data quality guideline
+  for the ecoinvent database version 3.* ecoinvent report No. 1 (v3).
+* Heijungs R (2020). On the number of Monte Carlo runs in comparative
+  probabilistic LCA. *International Journal of Life Cycle Assessment* 25:394-402.

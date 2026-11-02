@@ -1,0 +1,34 @@
+Package: lcamate
+Type: Package
+Title: Matrix-Based Life Cycle Assessment in R
+Version: 0.0.0.9031
+Authors@R: person("Juan C.", "Gaviria-Chaverra", email = "jcarlos.gaviria@udea.edu.co",
+    role = c("aut", "cre"), comment = c(ORCID = "0009-0008-9403-416X"))
+Description: Computes life cycle assessment (LCA) results with the matrix
+    method of ISO 14044: technosphere and biosphere matrices are built from
+    a table of exchanges, the supply vector is obtained by solving a sparse
+    linear system, and inventories, impact scores and process contributions
+    follow from it. Monte Carlo simulation with lognormal uncertainty is
+    included. Results are validated against Brightway and openLCA. 'LCA' here means
+    life cycle assessment, not latent class analysis.
+License: MIT + file LICENSE
+URL: https://github.com/jcarlosgaviria/lcamate
+BugReports: https://github.com/jcarlosgaviria/lcamate/issues
+Encoding: UTF-8
+Roxygen: list(markdown = TRUE)
+Depends: R (>= 4.1.0)
+Imports:
+    utils,
+    Matrix,
+    jsonlite,
+    rlang,
+    stats
+Suggests:
+    testthat (>= 3.0.0),
+    ggplot2,
+    readxl,
+    knitr,
+    rmarkdown
+Config/testthat/edition: 3
+VignetteBuilder: knitr
+Config/roxygen2/version: 8.0.0

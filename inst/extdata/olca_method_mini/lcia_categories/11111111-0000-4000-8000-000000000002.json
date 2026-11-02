@@ -1,0 +1,116 @@
+{
+ "@type": "ImpactCategory",
+ "@id": "11111111-0000-4000-8000-000000000002",
+ "name": "Test toxicity (invented)",
+ "refUnit": "CTU",
+ "impactFactors": [
+  {
+   "@type": "ImpactFactor",
+   "flow": {
+    "@type": "Flow",
+    "@id": "f7ebc6df-b3ee-30de-b6e8-c70e155854b3",
+    "name": "Toluene",
+    "flowType": "ELEMENTARY_FLOW"
+   },
+   "unit": {
+    "@type": "Unit",
+    "name": "kg"
+   },
+   "flowProperty": {
+    "@type": "FlowProperty",
+    "name": "Mass"
+   },
+   "value": 2.0
+  },
+  {
+   "@type": "ImpactFactor",
+   "flow": {
+    "@type": "Flow",
+    "@id": "9db863f5-a6d7-3d73-93b9-c8d482d2ffa9",
+    "name": "Zinc(II)",
+    "flowType": "ELEMENTARY_FLOW"
+   },
+   "unit": {
+    "@type": "Unit",
+    "name": "kg"
+   },
+   "flowProperty": {
+    "@type": "FlowProperty",
+    "name": "Energy"
+   },
+   "value": 4.0
+  },
+  {
+   "@type": "ImpactFactor",
+   "flow": {
+    "@type": "Flow",
+    "@id": "b51b5cbd-b0cb-3104-b03b-4fbc12829a9e",
+    "name": "Pyrene",
+    "flowType": "ELEMENTARY_FLOW"
+   },
+   "unit": {
+    "@type": "Unit",
+    "name": "kg"
+   },
+   "flowProperty": {
+    "@type": "FlowProperty",
+    "name": "Mass"
+   },
+   "formula": "2*x"
+  },
+  {
+   "@type": "ImpactFactor",
+   "flow": {
+    "@type": "Flow",
+    "@id": "95df3205-7c00-3edd-af6e-92ff90f42999",
+    "name": "Phosphorus",
+    "flowType": "ELEMENTARY_FLOW"
+   },
+   "unit": {
+    "@type": "Unit",
+    "name": "bogus"
+   },
+   "flowProperty": {
+    "@type": "FlowProperty",
+    "name": "Mass"
+   },
+   "value": 3.0
+  },
+  {
+   "@type": "ImpactFactor",
+   "flow": {
+    "@type": "Flow",
+    "@id": "b6f010fb-a764-3063-af2d-bcb8309a97b7",
+    "name": "Carbon dioxide",
+    "flowType": "ELEMENTARY_FLOW"
+   },
+   "unit": {
+    "@type": "Unit",
+    "name": "kg"
+   },
+   "flowProperty": {
+    "@type": "FlowProperty",
+    "name": "Mass"
+   },
+   "value": 0.5
+  },
+  {
+   "@type": "ImpactFactor",
+   "flow": {
+    "@type": "Flow",
+    "@id": "b6f010fb-a764-3063-af2d-bcb8309a97b7",
+    "name": "Carbon dioxide",
+    "flowType": "ELEMENTARY_FLOW"
+   },
+   "unit": {
+    "@type": "Unit",
+    "name": "kg"
+   },
+   "flowProperty": {
+    "@type": "FlowProperty",
+    "name": "Mass"
+   },
+   "value": 99.0
+  }
+ ]
+}

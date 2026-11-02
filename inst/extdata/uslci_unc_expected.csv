@@ -1,0 +1,20 @@
+type,input,output,amount,utype,loc,scale,minimum,maximum
+biosphere,Particulate matter | Elementary flows/emission/air | out,c7fec37a-a023-3563-84d6-fa33a6b19f2f,0.00013381000000000002,4,,,3.62875e-05,0.00013381000000000002
+technosphere,732a5578-1750-3738-b0f2-607106574358,1296738e-d64f-3837-a793-bc33f491e292,0.9966216216216216,5,0.9966216216216216,,0.9797297297297297,1.0135135135135136
+technosphere,226ed3c2-e020-4c95-b1fc-4559fc2d18ac,1296738e-d64f-3837-a793-bc33f491e292,0.0033783783783783786,0,,,,
+technosphere,34156f3c-28ef-33db-9ad0-6293a2aa0d52,1296738e-d64f-3837-a793-bc33f491e292,0.5405405405405406,5,0.43918918918918903,,0.2702702702702703,0.9121621621621623
+biosphere,Chloride | Elementary flows/emission/air | out,34156f3c-28ef-33db-9ad0-6293a2aa0d52,4.0068909212703025e-09,0,,,,
+biosphere,Nitrate | Elementary flows/emission/air | out,34156f3c-28ef-33db-9ad0-6293a2aa0d52,5.633099094716386e-09,0,,,,
+biosphere,Carbon monoxide | Elementary flows/emission/air | out,34156f3c-28ef-33db-9ad0-6293a2aa0d52,7.870917729231276e-05,0,,,,
+technosphere,34156f3c-28ef-33db-9ad0-6293a2aa0d52,226ed3c2-e020-4c95-b1fc-4559fc2d18ac,0.306533391,0,,,,
+biosphere,Cobalt | Elementary flows/emission/air | out,226ed3c2-e020-4c95-b1fc-4559fc2d18ac,4.21e-11,0,,,,
+biosphere,Polycyclic aromatic hydrocarbons | Elementary flows/emission/air | out,226ed3c2-e020-4c95-b1fc-4559fc2d18ac,6.44e-13,0,,,,
+biosphere,Radionuclides | Elementary flows/emission/air | out,226ed3c2-e020-4c95-b1fc-4559fc2d18ac,0.328575988,0,,,,
+biosphere,Nickel | Elementary flows/emission/ground | out,732a5578-1750-3738-b0f2-607106574358,1.971154404000789e-06,0,,,,
+biosphere,Copper | Elementary flows/emission/water | out,732a5578-1750-3738-b0f2-607106574358,1.6142394671803025e-07,0,,,,
+biosphere,Acetaldehyde | Elementary flows/emission/ground | out,732a5578-1750-3738-b0f2-607106574358,1.3791583026815032e-07,0,,,,
+biosphere,"Particulate matter, > 2.5μm and ≤ 10μm | Elementary flows/emission/air/troposphere/urban | out",d42c11eb-98d2-3cf5-add5-d7c65431bfa3,1.65e-08,2,-17.919905456039878,0.3709686723646887,,
+biosphere,"Particulate matter, > 10μm | Elementary flows/emission/air/troposphere/urban | out",d42c11eb-98d2-3cf5-add5-d7c65431bfa3,3.76e-08,2,-17.096261786550563,0.24429000740933546,,
+biosphere,"Energy, heat | Elementary flows/emission/air/troposphere/urban | out",d42c11eb-98d2-3cf5-add5-d7c65431bfa3,0.44,2,-0.8209805520698302,0.1350135686065301,,
+biosphere,Potassium chloride | Elementary flows/resource/ground | in,d42c11eb-98d2-3cf5-add5-d7c65431bfa3,1.03,0,,,,
+biosphere,"Particulate matter, ≤ 2.5μm | Elementary flows/emission/air/troposphere/urban | out",d42c11eb-98d2-3cf5-add5-d7c65431bfa3,1.19e-08,2,-18.246727436828927,0.5657010557455503,,

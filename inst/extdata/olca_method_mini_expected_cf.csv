@@ -1,0 +1,6 @@
+category,flow,cf
+Test climate (invented),Carbon dioxide | Elementary flows/emission/air | out,1.0
+Test climate (invented),HCFC-22 | Elementary flows/emission/air | out,1760.0
+Test climate (invented),Mercury | Elementary flows/emission/air | out,5000.0
+Test toxicity (invented),Toluene | Elementary flows/emission/water | out,2.0
+Test toxicity (invented),Carbon dioxide | Elementary flows/emission/air | out,0.5

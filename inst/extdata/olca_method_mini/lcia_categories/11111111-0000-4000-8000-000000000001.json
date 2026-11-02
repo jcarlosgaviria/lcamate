@@ -1,0 +1,62 @@
+{
+ "@type": "ImpactCategory",
+ "@id": "11111111-0000-4000-8000-000000000001",
+ "name": "Test climate (invented)",
+ "refUnit": "kg CO2 eq",
+ "impactFactors": [
+  {
+   "@type": "ImpactFactor",
+   "flow": {
+    "@type": "Flow",
+    "@id": "b6f010fb-a764-3063-af2d-bcb8309a97b7",
+    "name": "Carbon dioxide",
+    "flowType": "ELEMENTARY_FLOW"
+   },
+   "unit": {
+    "@type": "Unit",
+    "name": "kg"
+   },
+   "flowProperty": {
+    "@type": "FlowProperty",
+    "name": "Mass"
+   },
+   "value": 1.0
+  },
+  {
+   "@type": "ImpactFactor",
+   "flow": {
+    "@type": "Flow",
+    "@id": "76cf7898-8461-3265-a3a4-14dd2682779e",
+    "name": "HCFC-22",
+    "flowType": "ELEMENTARY_FLOW"
+   },
+   "unit": {
+    "@type": "Unit",
+    "name": "kg"
+   },
+   "flowProperty": {
+    "@type": "FlowProperty",
+    "name": "Mass"
+   },
+   "value": 1760.0
+  },
+  {
+   "@type": "ImpactFactor",
+   "flow": {
+    "@type": "Flow",
+    "@id": "e2c65e04-f613-33db-9a6e-4cb4577b0005",
+    "name": "Mercury",
+    "flowType": "ELEMENTARY_FLOW"
+   },
+   "unit": {
+    "@type": "Unit",
+    "name": "g"
+   },
+   "flowProperty": {
+    "@type": "FlowProperty",
+    "name": "Mass"
+   },
+   "value": 5.0
+  }
+ ]
+}

@@ -1,0 +1,17 @@
+flow,id,ref_prop,cas
+Carbon dioxide | Elementary flows/emission/air/troposphere/rural | out,flow-01,Mass,124-38-9
+Methane | Elementary flows/emission/air/troposphere/urban | out,flow-02,Mass,74-82-8
+Nitrous oxide | Elementary flows/emission/air/troposphere/rural | out,flow-03,Mass,10024-97-2
+Sulfur dioxide | Elementary flows/emission/air/troposphere/urban | out,flow-04,Mass,7446-09-5
+Nitrogen oxides | Elementary flows/emission/air/troposphere/rural | out,flow-05,Mass,11104-93-1
+Sulfur oxides | Elementary flows/emission/air/troposphere/rural | out,flow-06,Mass,n.a.
+"Particulate matter, ≤ 2.5μm | Elementary flows/emission/air/troposphere/rural | out",flow-07,Mass,n.a.
+Formaldehyde | Elementary flows/emission/water/fresh water body | out,flow-08,Mass,50-00-0
+Formaldehyde | Elementary flows/emission/air/troposphere/urban | out,flow-09,Mass,50-00-0
+Formaldehyde | Elementary flows/emission/ground/human-dominated/agricultural | out,flow-10,Mass,50-00-0
+Mercury(II) | Elementary flows/emission/water/saline water body/ocean | out,flow-11,Mass,7439-97-6
+Chloroform | Elementary flows/emission/ground/human-dominated/industrial | out,flow-12,Mass,67-66-3
+Carbon dioxide | Elementary flows/resource/air | in,flow-13,Mass,124-38-9
+Unknown substance | Elementary flows/emission/air | out,flow-14,Mass,
+Carbon tetrachloride | Elementary flows/emission/water | out,flow-15,Mass,56-23-5
+Methane | Elementary flows/emission/air | out,flow-16,,Mass

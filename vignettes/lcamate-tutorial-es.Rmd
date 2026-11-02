@@ -1,0 +1,225 @@
+---
+title: "Un primer ACV con lcamate: vaso desechable frente a vaso reutilizable"
+author: "Juan C. Gaviria-Chaverra"
+date: "`r Sys.Date()`"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{Un primer ACV con lcamate: vaso desechable frente a vaso reutilizable}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r setup, include = FALSE}
+knitr::opts_chunk$set(collapse = TRUE, comment = "#>", fig.width = 7, fig.height = 3.8,
+                      dev = "png", dpi = 96)
+library(lcamate)
+ext <- function(...) system.file("extdata", ..., package = "lcamate")
+```
+
+> **Todos los datos de este tutorial son inventados.** Los diez procesos son
+> ficticios y los números se eligieron para enseñar, no son mediciones. Nada de
+> lo que sigue muestra que un tipo de vaso sea mejor que el otro. Esta es una
+> adaptación al español de la viñeta principal, *lcamate-tutorial* (en inglés).
+
+## 1. La pregunta y el modelo
+
+**Unidad funcional:** una bebida servida en un vaso. La alternativa A es un vaso
+desechable con tapa, que se incinera después. La alternativa B es un vaso
+reutilizable que sirve 30 bebidas y se lava después de cada uso.
+
+Los datos son dos tablas: los intercambios entre procesos y con el ambiente, y
+los factores de caracterización del método de impacto (aquí un GWP100
+simplificado con CO2, CH4 y N2O).
+
+```{r data}
+ex <- read.csv(ext("cup_exchanges.csv"))
+cf <- read.csv(ext("cup_cf.csv"))
+head(ex[, c("type", "input", "output", "amount", "utype", "scale")], 8)
+cf
+```
+
+`type` indica si un intercambio es con otro proceso (`technosphere`) o con el
+ambiente (`biosphere`). `utype = 2` marca una distribución lognormal con
+parámetros `loc = log(mediana)` y `scale = log(GSD)`; `utype = 0` es un valor
+fijo. La columna `source` repite, en cada fila, que los datos son inventados.
+
+```{r model}
+m <- lca_model(ex, cf)
+m
+```
+
+## 2. Resultados y contribuciones
+
+```{r scores}
+a <- lca_calc(m, c(serving_disposable = 1), "GWP100")
+b <- lca_calc(m, c(serving_reusable = 1), "GWP100")
+c(disposable = a$score, reusable = b$score)
+```
+
+Los resultados están en kg CO2-eq por bebida. Las contribuciones muestran *de
+dónde* viene el resultado y suman exactamente el total.
+
+```{r contrib}
+lca_contrib(b, n = 5)
+plot_contributions(b, n = 5)
+```
+
+## 3. Incertidumbre: Monte Carlo, error y cobertura
+
+Donde los datos traen una distribución, `lca_mc()` la muestrea de forma
+independiente para cada intercambio.
+
+```{r mc}
+x <- lca_mc(m, c(serving_reusable = 1), "GWP100", n = 500, seed = 1, keep_draws = TRUE)
+lca_mc_summary(x)
+lca_mc_error(unclass(x)[, 1], target_rel = 0.01)[c("n", "rel_se", "n_needed")]
+```
+
+Aquí `n = 500` mantiene la viñeta rápida; para un resultado que vaya a informar, use el `n_needed` que se imprime arriba (o más).
+
+Dos números responden preguntas distintas. El **intervalo** (`q2.5` a `q97.5`)
+describe cuánta incertidumbre tiene el *resultado*, dadas las distribuciones
+declaradas. El **error de Monte Carlo** (`mc_rel_se`) dice con qué precisión se
+estima la *media de la simulación*, y `n_needed` cuántas iteraciones exige un
+error objetivo.
+
+Lea también la **cobertura**: la parte del resultado que viene de intercambios
+con distribución.
+
+```{r coverage}
+lca_uncertainty_coverage(m, c(serving_reusable = 1), "GWP100")
+```
+
+Cuando la cobertura es baja, un intervalo estrecho significa *falta de
+información*, no poca incertidumbre. Aquí algunos intercambios son fijos (por
+ejemplo la emisión del detergente), algo realista: la mayoría de las bases de
+datos documentan solo parte de su incertidumbre.
+
+```{r sens}
+lca_sens(x, top = 4)
+```
+
+## 4. Comparar las alternativas
+
+Ambos vasos dependen del mismo proceso de electricidad. Una comparación
+**pareada** usa los mismos valores muestreados para las dos alternativas en cada
+iteración, de modo que lo que comparten se cancela en la diferencia.
+
+```{r compare}
+cmp <- lca_compare(m, c(serving_reusable = 1), c(serving_disposable = 1), "GWP100",
+                   n = 500, seed = 1)
+lca_compare_summary(cmp)[, c("mean_diff", "diff_lower", "diff_upper", "prob_a_lower")]
+plot_compare(cmp)
+```
+
+Se lee como un tamaño de efecto: la diferencia (reutilizable menos desechable)
+con su intervalo, y la probabilidad de que el reutilizable tenga menor
+resultado bajo estas distribuciones *inventadas*. No hay valores p: con valores
+simulados, un valor p solo refleja cuántas iteraciones se corrieron (Heijungs,
+2020).
+
+## 5. ¿Cuántos usos? Una pregunta de escenarios
+
+El número de usos es un parámetro del modelo, no un intercambio con
+distribución. `lca_scale()` cambia un intercambio por un factor; aquí, la
+fracción de un vaso que se atribuye a una bebida (1/30 en los datos).
+
+```{r uses}
+score_reusable <- function(uses)
+  lca_calc(lca_scale(m, "cup_reusable", "serving_reusable", 30 / uses),
+           c(serving_reusable = 1), "GWP100")$score
+uses <- c(5, 10, 20, 30, 50)
+data.frame(uses = uses,
+           reusable = vapply(uses, score_reusable, 0),
+           disposable = a$score)
+```
+
+Con estos números inventados, los resultados deterministas se cruzan cerca de
+los 30 usos supuestos. Con datos reales, la posición de ese cruce y su
+incertidumbre son la pregunta real del estudio.
+
+## 6. Diseño de experimentos: ¿qué supuestos pesan más?
+
+Un diseño factorial de dos niveles explora varios supuestos a la vez. Factores:
+número de usos, energía de lavado e intensidad de carbono de la electricidad. La
+respuesta es la diferencia (reutilizable menos desechable); un valor negativo
+favorece al reutilizable *en este modelo de juguete*.
+
+```{r doe}
+design <- lca_doe_design(list(uses = c(10, 50), wash = c(0.5, 1.5), grid = c(0.5, 1.5)))
+fun <- function(mm, lv) {
+  mm <- lca_scale(mm, "cup_reusable", "serving_reusable", 30 / lv$uses)
+  mm <- lca_scale(mm, "electricity", "washing", lv$wash)
+  lca_scale(mm, "CO2", "electricity", lv$grid)
+}
+run <- lca_doe_run(m, design, fun, c(serving_reusable = 1, serving_disposable = -1),
+                   "GWP100", n = 200, seed = 1)
+eff <- lca_doe_effects(run)
+eff
+plot_effects(eff)
+```
+
+Cada efecto es el cambio de la respuesta cuando un factor pasa de su primer a su
+segundo nivel. En este modo el intervalo refleja la incertidumbre de los
+insumos y no hay valores p; esos corresponden a experimentos con réplicas
+reales.
+
+Dos precauciones al leer la tabla. La respuesta es una *diferencia* cuya media
+está cerca de cero, así que la columna `relative` (efecto dividido por la
+respuesta media) es enorme y aquí no informa; lea los efectos en kg CO2-eq. Y el
+efecto de la interacción entre usos y lavado es del orden de 1e-19 o menor, es decir, cero
+numérico: en este modelo las dos contribuciones simplemente se suman.
+
+## 7. Cuando los datos no traen incertidumbre
+
+Si se quitan las distribuciones, el modelo queda como una tabla de valores
+únicos:
+
+```{r plain}
+plain <- m
+plain$ex$utype <- NULL
+lca_uncertainty_coverage(plain, c(serving_reusable = 1), "GWP100")[c("share_bio_contribution")]
+```
+
+La cobertura es cero: un resultado determinista no dice nada de la
+incertidumbre. Si se necesita explorarla, la matriz de pedigrí permite declarar
+de forma explícita qué tan buenos se cree que son los datos y construir un
+**escenario etiquetado** (véase la viñeta *lcamate-pedigri*):
+
+```{r pedigree}
+scores <- data.frame(output = c("cup_reusable", "plastic"),
+                     reliability = 3, completeness = 3, temporal = 2,
+                     geographical = 2, technological = 2)
+sc <- lca_pedigree_scenario(plain, lca_pedigree(plain, scores))
+sc
+lca_uncertainty_coverage(sc, c(serving_reusable = 1), "GWP100")[c("share_bio_contribution", "share_bio_scenario")]
+```
+
+El escenario no son datos: dice cuál *sería* el intervalo si los datos tuvieran
+la incertidumbre genérica que implican los puntajes.
+
+## 8. Un informe
+
+`lca_report()` reúne resultados, contribuciones, incertidumbre, cobertura y la
+declaración de lo calculado y lo supuesto en un archivo html o Word. Necesita
+los paquetes `rmarkdown` y `knitr` y pandoc:
+
+```{r report, eval = FALSE}
+lca_report(m, c(serving_reusable = 1), n = 500,
+           title = "Vaso reutilizable (datos ilustrativos)",
+           goal = "Ejemplo de enseñanza con datos inventados.",
+           assumptions = "Todos los valores del inventario son inventados.",
+           file = "informe-vaso.html")
+```
+
+## 9. Lo que no debe concluirse
+
+* Que un vaso reutilizable sea mejor o peor que uno desechable: los datos son
+  inventados.
+* Que un intervalo estrecho signifique poca incertidumbre: mire la cobertura.
+* Que una probabilidad de una corrida de Monte Carlo sea un valor p: no lo es.
+
+## Referencia
+
+Heijungs R (2020). On the number of Monte Carlo runs in comparative
+probabilistic LCA. *International Journal of Life Cycle Assessment* 25:394-402.
