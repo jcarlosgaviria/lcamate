@@ -23,7 +23,7 @@ what was compared, with which tolerance and what was **not** checked.
 
 ## Status
 
-Development version (`0.0.0.9xxx`). It is not on CRAN. Install from GitHub:
+Version `0.1.0`. It is being prepared for CRAN and is not on CRAN yet. Install from GitHub:
 
 ```r
 # install.packages("pak")

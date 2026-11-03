@@ -1,3 +1,12 @@
+# lcamate 0.1.0
+
+* First release intended for CRAN. It collects the development versions 0.0.0.9028 to 0.0.0.9031 listed below; the code is the same as in 0.0.0.9031.
+* Matrix-based life cycle assessment (ISO 14044): technosphere and biosphere matrices from a table of exchanges, sparse solution, inventories, impact
+  scores and process contributions; readers for USLCI (openLCA JSON-LD), CSV tables, impact methods and TRACI 2.2; input checks with `lca_check()`;
+  Monte Carlo simulation with lognormal uncertainty and pedigree scenarios; comparison of alternatives; designs of experiments; reproducible reports.
+* The public repository is <https://github.com/jcarlosgaviria/lcamate>; bugs and questions go to its issue tracker.
+* Version numbers below 0.1.0 were development snapshots and were never on CRAN. The API may still change in minor versions.
+
 # lcamate 0.0.0.9031
 
 * Vignettes: fewer Monte Carlo iterations in the examples (500 instead of 2000; 200 or 300 instead of 500 or 1000 in the designs of experiments),
