@@ -6,7 +6,7 @@
 \alias{lcamate-package}
 \title{lcamate: Matrix-Based Life Cycle Assessment in R}
 \description{
-Computes life cycle assessment (LCA) results with the matrix method of ISO 14044: technosphere and biosphere matrices are built from a table of exchanges, the supply vector is obtained by solving a sparse linear system, and inventories, impact scores and process contributions follow from it. Monte Carlo simulation with lognormal uncertainty is included. Results are validated against Brightway and openLCA. 'LCA' here means life cycle assessment, not latent class analysis.
+Computes life cycle assessment (LCA) results with the matrix method of ISO 14044: technosphere and biosphere matrices are built from a table of exchanges, the supply vector is obtained by solving a sparse linear system, and inventories, impact scores and process contributions follow from it. Monte Carlo simulation with lognormal uncertainty is included. Results are checked against 'Brightway' and 'openLCA' on test data. 'LCA' here means life cycle assessment, not latent class analysis.
 }
 \seealso{
 Useful links:
