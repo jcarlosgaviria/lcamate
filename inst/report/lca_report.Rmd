@@ -12,6 +12,7 @@ knitr::opts_chunk$set(echo = FALSE, message = FALSE, warning = FALSE,
 d <- params$data
 tab <- function(x, ...) knitr::kable(x, ...)
 sig <- function(x) signif(x, 4)
+sec <- 5
 ```
 
 ## 1. Goal and scope
@@ -114,7 +115,8 @@ if (length(d$warnings)) {
 
 ```{r compare, results='asis'}
 if (!is.null(d$compare)) {
-  cat("\n## 6. Comparison of two alternatives\n\n")
+  sec <- sec + 1
+  cat(sprintf("\n## %d. Comparison of two alternatives\n\n", sec))
   cat(sprintf("%s Monte Carlo (%d iterations). Reported as effect sizes and probabilities, not p-values.\n\n",
               if (d$compare$paired) "Paired" else "Unpaired", d$compare$n))
   cs <- d$compare$summary; cs[] <- lapply(cs, function(v) if (is.numeric(v)) sig(v) else v)
@@ -125,7 +127,8 @@ if (!is.null(d$compare)) {
 
 ```{r doe, results='asis'}
 if (!is.null(d$doe)) {
-  cat("\n## 7. Design of experiments\n\n")
+  sec <- sec + 1
+  cat(sprintf("\n## %d. Design of experiments\n\n", sec))
   if (d$doe$mode == "model")
     cat("Model mode: effects over the Monte Carlo uncertainty of the inputs; no p-values are reported.\n\n")
   else
@@ -136,7 +139,10 @@ if (!is.null(d$doe)) {
 }
 ```
 
-## 8. What is computed and what is assumed
+```{r h8, results='asis'}
+sec <- sec + 1
+cat(sprintf("\n## %d. What is computed and what is assumed\n\n", sec))
+```
 
 **Computed from the data**
 
@@ -150,13 +156,19 @@ cat(paste0("* ", d$measured, collapse = "\n"), "\n")
 if (is.null(d$assumed)) cat("*No assumptions were declared. List here the choices that are not in the data (system boundary, allocation, cut-offs, scenario parameters).*\n") else cat(paste0("* ", d$assumed, collapse = "\n"), "\n")
 ```
 
-## 9. Limitations
+```{r h9, results='asis'}
+sec <- sec + 1
+cat(sprintf("\n## %d. Limitations\n\n", sec))
+```
 
 ```{r lim, results='asis'}
 cat(paste0("* ", d$limitations, collapse = "\n"), "\n")
 ```
 
-## 10. Reproducibility
+```{r h10, results='asis'}
+sec <- sec + 1
+cat(sprintf("\n## %d. Reproducibility\n\n", sec))
+```
 
 `lcamate` version `r d$versions$lcamate`; `r d$versions$R`; seed `r d$mc$seed`.
 
